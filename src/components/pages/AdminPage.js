@@ -1,129 +1,96 @@
-import React, { useState } from 'react';
-import CustomButton from '../CustomButton/CustomButton';
-import CustomInput from '../CustomInput/CustomInput';
-import CustomTable from '../CustomTable/CustomTable';
+import React, { Component } from 'react';
 import '../../App.css';
 
-const initialValues = {
-  userName: '',
-  userSurname: '',
-  userSalary: ''
-}
+class AdminPage extends Component {
 
-function AdminPage() {
-  const [userData, setUserData] = useState(initialValues);
-  const [users, setUsers] = useState([]);
-  const [editableUserData, setEditableUserData] = useState({
-    isEdit: false,
-    userIndex: null
-  });
-
-  const handleRemoveClick = ({ index }) => {
-    setUsers(users.filter((user, userIndex) => userIndex !== index));
-  };
-
-  const isFilledFields = userData.userName && userData.userSurname && userData.userSalary;
-
-  const handleSubmitUser = (e) => {
-    e.preventDefault();
-
-    if (isFilledFields) {
-      if (editableUserData.isEdit) {
-        const editedData = users;
-        editedData.splice(editableUserData.userIndex, 1, userData);
-
-        setUsers(editedData);
-
-        setEditableUserData({
-          isEdit: false,
-          userIndex: null
-        })
-      } else {
-        setUsers((prevState) => [...prevState, userData]);
-      }
-
-      setUserData(initialValues)
+  constructor(props){
+    super(props);
+    this.state={
+      title: 'React Simple CRUD Application',
+      act: 0,
+      index: '',
+      datas: []
     }
+  } 
+
+  componentDidMount(){
+    this.refs.name.focus();
   }
 
-  const handleCleanClick = () => {
-    setUserData(initialValues);
-    setEditableUserData({
-      isEdit: false,
-      userIndex: null
-    })
-  };
+  fSubmit = (e) =>{
+    e.preventDefault();
+    console.log('try');
 
-  const handleEditClick = ({ user, index }) => {
-    setUserData(user);
-    setEditableUserData({
-      isEdit: true,
-      userIndex: index
-    })
+    let datas = this.state.datas;
+    let name = this.refs.name.value;
+    let address = this.refs.address.value;
+
+    if(this.state.act === 0){   //new
+      let data = {
+        name, address
+      }
+      datas.push(data);
+    }else{                      //update
+      let index = this.state.index;
+      datas[index].name = name;
+      datas[index].address = address;
+    }    
+
+    this.setState({
+      datas: datas,
+      act: 0
+    });
+
+    this.refs.myForm.reset();
+    this.refs.name.focus();
   }
 
-  const handleInputChange = (e, userName) => setUserData((prevState) => ({
-    ...prevState,
-    [userName]: e.target.value
-  }))
+  fRemove = (i) => {
+    let datas = this.state.datas;
+    datas.splice(i,1);
+    this.setState({
+      datas: datas
+    });
 
-  return (
-    <div className="wrapper">
-      <div className="wrapper-content">
-        <div className="table-data">
-          <CustomTable
-            users={users}
-            handleEditClick={handleEditClick}
-            handleRemoveClick={handleRemoveClick}
-          />
-        </div>
+    this.refs.myForm.reset();
+    this.refs.name.focus();
+  }
 
-        <div>
-          <form onSubmit={handleSubmitUser} onReset={handleCleanClick}>
-            <CustomInput
-              placeholder="Write your name"
-              handleChange={handleInputChange}
-              value={userData.userName}
-              fieldName="userName"
-            />
+  fEdit = (i) => {
+    let data = this.state.datas[i];
+    this.refs.name.value = data.name;
+    this.refs.address.value = data.address;
 
-            <CustomInput
-              placeholder="Write your surname"
-              handleChange={handleInputChange}
-              value={userData.userSurname}
-              fieldName="userSurname"
-            />
+    this.setState({
+      act: 1,
+      index: i
+    });
 
-            <CustomInput
-              placeholder="Write your salary"
-              handleChange={handleInputChange}
-              value={userData.userSalary}
-              fieldName="userSalary"
-            />
+    this.refs.name.focus();
+  }  
 
-            <div className="buttons-wrapper">
-              <CustomButton
-                label="Clean"
-                classNames=""
-                handleClick={() => {}}
-                data={null}
-                type="reset"
-              />
-
-              <CustomButton
-                label={editableUserData.isEdit ? 'Edit' : 'Add'}
-                classNames=""
-                handleClick={() => {}}
-                data={null}
-                type="submit"
-                disabled={!isFilledFields}
-              />
-            </div>
-          </form>
-        </div>
+  render() {
+    let datas = this.state.datas;
+    return (
+      <div className="App">
+        <h2>{this.state.title}</h2>
+        <form ref="myForm" className="myForm">
+          <input type="text" ref="name" placeholder="your name" className="formField" />
+          <input type="text" ref="address" placeholder="your address" className="formField" />
+          <button onClick={(e)=>this.fSubmit(e)} className="myButton">submit </button>
+        </form>
+        <pre>
+          {datas.map((data, i) =>
+            <li key={i} className="myList">
+              {i+1}. {data.name}, {data.address}
+              <button onClick={()=>this.fRemove(i)} className="myListButton">remove </button>
+              <button onClick={()=>this.fEdit(i)} className="myListButton">edit </button>
+            </li>
+          )}
+        </pre>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default AdminPage;
