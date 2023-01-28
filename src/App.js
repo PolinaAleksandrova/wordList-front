@@ -9,6 +9,10 @@ import ContactUs from './components/pages/ContactUs';
 import SignUp from './components/pages/SignUp';
 import Marketing from './components/pages/Marketing';
 import Consulting from './components/pages/Consulting';
+import AdminPage from './components/pages/AdminPage';
+
+
+
 
 function App() {
   return (
@@ -22,6 +26,7 @@ function App() {
         <Route path='/sign-up' component={SignUp} />
         <Route path='/marketing' component={Marketing} />
         <Route path='/consulting' component={Consulting} />
+        <Route path='/adminPage' component={AdminPage} />
       </Switch>
     </Router>
   );

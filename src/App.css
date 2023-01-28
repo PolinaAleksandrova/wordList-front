@@ -10,6 +10,7 @@
 .products,
 .contact-us,
 .sign-up,
+.adminPage,
 .marketing,
 .consulting {
   display: flex;
@@ -23,7 +24,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
+  color: rgb(163, 163, 163);
   font-size: 100px;
 }
 
@@ -31,7 +32,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
+  color: rgb(163, 163, 163);
   font-size: 100px;
 }
 
@@ -39,7 +40,7 @@
   background-position: center;
   background-size: fill;
   background-repeat: no-repeat;
-  color: #fff;
+  color: rgb(163, 163, 163);
   font-size: 100px;
 }
 
@@ -47,7 +48,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
+  color: rgb(163, 163, 163);
   font-size: 100px;
 }
 
@@ -55,7 +56,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
+  color: rgb(163, 163, 163);
   font-size: 100px;
 }
 
@@ -63,7 +64,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
+  color: rgb(163, 163, 163);
   font-size: 100px;
 }
 
@@ -72,6 +73,39 @@
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
+  color: rgb(163, 163, 163);
   font-size: 100px;
 }
+
+.adminPage {
+
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(163, 163, 163);
+  font-size: 100px;
+}
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper-content {
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 10px 0;
+}
+

@@ -18,5 +18,9 @@ export const MenuItems = [
     title: 'Development',
     path: '/development',
     cName: 'dropdown-link'
+  },
+  {
+
+    path: '/adminPage'
   }
 ];

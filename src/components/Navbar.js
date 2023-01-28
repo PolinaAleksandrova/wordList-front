@@ -84,6 +84,12 @@ function Navbar() {
               Sign Up
             </Link>
           </li>
+          <li>
+            <Link
+              to='/adminPage'
+            >
+            </Link>
+          </li>
         </ul>
         <Button />
       </nav>
