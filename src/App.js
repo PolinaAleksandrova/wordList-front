@@ -10,7 +10,8 @@ import SignUp from './components/pages/SignUp';
 import Marketing from './components/pages/Marketing';
 import Consulting from './components/pages/Consulting';
 import AdminPage from './components/pages/AdminPage';
-
+import Add from './components/Add';
+import Edit from './components/Edit';
 
 
 
@@ -27,6 +28,8 @@ function App() {
         <Route path='/marketing' component={Marketing} />
         <Route path='/consulting' component={Consulting} />
         <Route path='/adminPage' component={AdminPage} />
+        <Route path='/create' component={Add} />
+        <Route path='/edit' component={Edit} />
       </Switch>
     </Router>
   );
