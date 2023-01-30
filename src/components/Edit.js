@@ -3,11 +3,11 @@ import{Button, Form} from 'react-bootstrap'
 import "bootstrap/dist/css/bootstrap.min.css";
 import Employees from './Employees';
 import {v4 as uuid} from "uuid";
-import {Link,useHistory} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
 function Edit(){
-    const[name, setName] = useState('');
-    const[age, setAge] = useState('');
+    const[nameWord, setWordName] = useState('');
+    const[nameAudio, setAudioName] = useState('');
     const[id, setId] = useState('');
     let history = useHistory();
 
@@ -18,27 +18,27 @@ function Edit(){
       const handleSubmit = (e) =>{
         e.preventDefault();
         let a = Employees[index];
-        a.Name = name;
-        a.Age = age;
+        a.word_name = nameWord;
+        a.audio_name = nameAudio;
 
         history.push("/adminPage");
     }
     useEffect(() => {
-        setName(localStorage.getItem('Name'))  
-        setAge(localStorage.getItem('Age'))   
+      setWordName(localStorage.getItem('word_name'))  
+        setAudioName(localStorage.getItem('audio_name'))   
         setId(localStorage.getItem('Id'))     
     },[])
       return(
         <div>
             <Form className="d-grid gap-2" style={{margin:"15rem"}}>
 
-<Form.Group className="mb-3" controlId="formName">
-    <Form.Control type="text" placeholder="Enter Name" value ={name} required onChange={(e) => setName(e.target.value)}>
+<Form.Group className="mb-3" controlId="formWordName">
+    <Form.Control type="text" placeholder="Enter word_name" value ={nameWord} required onChange={(e) => setWordName(e.target.value)}>
 
     </Form.Control>
 </Form.Group>
-<Form.Group className="mb-3" controlId="formAge">
-    <Form.Control type="text" placeholder="Enter Age" value ={age} required onChange={(e) => setAge(e.target.value)}>
+<Form.Group className="mb-3" controlId="formAudioName">
+    <Form.Control type="text" placeholder="Enter audio_name" value ={nameAudio} required onChange={(e) => setAudioName(e.target.value)}>
 
     </Form.Control>
 </Form.Group>

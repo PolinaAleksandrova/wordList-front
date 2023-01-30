@@ -6,13 +6,13 @@
 }
 
 .home,
-.services,
-.products,
+.courses,
+.tests,
 .contact-us,
 .sign-up,
 .adminPage,
-.marketing,
-.consulting {
+.examination,
+.profession {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -28,7 +28,7 @@
   font-size: 100px;
 }
 
-.services {
+.courses {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -36,7 +36,7 @@
   font-size: 100px;
 }
 
-.products {
+.tests {
   background-position: center;
   background-size: fill;
   background-repeat: no-repeat;
@@ -60,7 +60,7 @@
   font-size: 100px;
 }
 
-.marketing {
+.examination {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -68,7 +68,7 @@
   font-size: 100px;
 }
 
-.consulting {
+.profession {
 
   background-position: bottom;
   background-size: cover;

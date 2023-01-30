@@ -9,9 +9,9 @@ import {Link,useHistory} from 'react-router-dom'
 function AdminPage(){
 
   let history = useHistory();
-  const handleEdit = (id, name, age) =>{
-    localStorage.setItem('Name',name);
-    localStorage.setItem('Age',age);
+  const handleEdit = (id, nameWord, nameAudio) =>{
+    localStorage.setItem('word_name',nameWord);
+    localStorage.setItem('audio_name',nameAudio);
     localStorage.setItem('Id',id);
   }
   const handleDelete = (id)=>{
@@ -34,10 +34,10 @@ function AdminPage(){
           <thead>
             <tr>
                 <th>
-                  Name
+                word_name
                 </th>
                 <th>
-                  Age
+                audio_name
                 </th>
                 <th>
                   Actions
@@ -52,14 +52,14 @@ function AdminPage(){
                 return(
                   <tr>
                     <td>
-                      {item.Name}
+                      {item.word_name}
                     </td>
                     <td>
-                      {item.Age}
+                      {item.audio_name}
                     </td>
                     <td>
                       <Link to={`/edit`}>
-                      <Button onClick={() => handleEdit(item.id, item.Name, item.Age)}>EDIT</Button>
+                      <Button onClick={() => handleEdit(item.id, item.word_name, item.audio_name)}>EDIT</Button>
                       </Link>
                       &nbsp;
                       <Button onClick={() => handleDelete(item.id)}>DELETE</Button>

@@ -1,22 +1,22 @@
 export const MenuItems = [
   {
-    title: 'Marketing',
-    path: '/marketing',
+    title: 'Examination',
+    path: '/examination',
     cName: 'dropdown-link'
   },
   {
-    title: 'Consulting',
-    path: '/consulting',
+    title: 'Professional course',
+    path: '/profession',
     cName: 'dropdown-link'
   },
   {
-    title: 'Design',
-    path: '/design',
+    title: 'Basic course',
+    path: '/basics',
     cName: 'dropdown-link'
   },
   {
-    title: 'Development',
-    path: '/development',
+    title: 'Advanced course',
+    path: '/advancedCourse',
     cName: 'dropdown-link'
   },
   {
