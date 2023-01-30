@@ -1,16 +1,16 @@
 const Employees = [
     {
         id: "1",
-        Name: "User",
-        Age: "21"
+        word_name: "Word1",
+        audio_name: "audio1"
     }, {
         id: "2",
-        Name: "Use2r",
-        Age: "22"
+        word_name: "Word2",
+        audio_name: "audio2"
     },{
         id: "3",
-        Name: "User3",
-        Age: "23"
+        word_name: "Word3",
+        audio_name: "audio3"
     }
 ]
 
