@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import{Button, Form} from 'react-bootstrap'
 import "bootstrap/dist/css/bootstrap.min.css";
-import Employees from './Employees';
+import AdminDataTable from './AdminDataTable';
 import {v4 as uuid} from "uuid";
 import {useHistory} from 'react-router-dom';
 
@@ -11,13 +11,13 @@ function Edit(){
     const[id, setId] = useState('');
     let history = useHistory();
 
-    var index = Employees.map(function(e){
+    var index = AdminDataTable.map(function(e){
         return e.id
       }).indexOf(id);
       
       const handleSubmit = (e) =>{
         e.preventDefault();
-        let a = Employees[index];
+        let a = AdminDataTable[index];
         a.word_name = nameWord;
         a.audio_name = nameAudio;
 

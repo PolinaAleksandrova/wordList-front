@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import{Button, Form} from 'react-bootstrap'
 import "bootstrap/dist/css/bootstrap.min.css";
-import Employees from './Employees';
+import AdminDataTable from './AdminDataTable';
 import {v4 as uuid} from "uuid";
 import {useHistory} from 'react-router-dom'
 
@@ -21,7 +21,7 @@ function Add(){
         let a = nameWord,
         b= nameAudio;
 
-        Employees.push({id : uniqueId, word_name: a, audio_name : b});
+        AdminDataTable.push({id : uniqueId, word_name: a, audio_name : b});
 
         history.push("/adminPage");
     }

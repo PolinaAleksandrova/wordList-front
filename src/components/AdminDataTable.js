@@ -1,4 +1,4 @@
-const Employees = [
+const AdminDataTable = [
     {
         id: "1",
         word_name: "Word1",
@@ -14,4 +14,4 @@ const Employees = [
     }
 ]
 
-export default  Employees;
+export default  AdminDataTable;
