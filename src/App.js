@@ -12,7 +12,7 @@ import ProfessionalCourse from './components/pages/ProfessionalCourse';
 import AdminPage from './components/pages/AdminPage';
 import Add from './components/Add';
 import Edit from './components/Edit';
-
+import AdminTranslateTable from './components/pages/AdminTranslateTable';
 
 
 function App() {
@@ -30,6 +30,7 @@ function App() {
         <Route path='/adminPage' component={AdminPage} />
         <Route path='/create' component={Add} />
         <Route path='/edit' component={Edit} />
+        <Route path='/adminTr' component={AdminTranslateTable} />
       </Switch>
     </Router>
   );

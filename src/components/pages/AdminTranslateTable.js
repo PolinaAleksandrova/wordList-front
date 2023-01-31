@@ -2,26 +2,26 @@ import React, {Fragment} from 'react';
 import {Table, Button} from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import AdminDataTable from '../AdminDataTable';
+import AdminTranslateData from '../AdminTranslateData';
 import {Link,useHistory} from 'react-router-dom'
 
 
-function AdminPage(){
+function AdminTranslateTable(){
 
   let history = useHistory();
-  const handleEdit = (id, nameWord, nameAudio) =>{
-    localStorage.setItem('word_name',nameWord);
-    localStorage.setItem('audio_name',nameAudio);
+  const handleEdit = (id, nameTranslate, audioTranslate) =>{
+    localStorage.setItem('translate_name',nameTranslate);
+    localStorage.setItem('translate_audio',audioTranslate);
     localStorage.setItem('Id',id);
   }
   const handleDelete = (id)=>{
-    var index = AdminDataTable.map(function(e){
+    var index = AdminTranslateData.map(function(e){
       return e.id
     }).indexOf(id);
 
-    AdminDataTable.splice(index,1);
+    AdminTranslateData.splice(index,1);
 
-    history.push('/adminPage');
+    history.push('/adminTr');
 
   }
 
@@ -32,10 +32,10 @@ function AdminPage(){
           <thead>
             <tr>
                 <th>
-                word_name
+                translate_name
                 </th>
                 <th>
-                audio_name
+                translate_audio
                 </th>
                 <th>
                   Actions
@@ -44,20 +44,20 @@ function AdminPage(){
           </thead>
           <tbody>
             {
-              AdminDataTable && AdminDataTable.length > 0
+              AdminTranslateData && AdminTranslateData.length > 0
               ?
-              AdminDataTable.map((item) =>{
+              AdminTranslateData.map((item) =>{
                 return(
                   <tr>
                     <td>
-                      {item.word_name}
+                      {item.translate_name}
                     </td>
                     <td>
-                      {item.audio_name}
+                      {item.translate_audio}
                     </td>
                     <td>
                       <Link to={`/edit`}>
-                      <Button onClick={() => handleEdit(item.id, item.word_name, item.audio_name)}>EDIT</Button>
+                      <Button onClick={() => handleEdit(item.id, item.translate_name, item.translate_audio)}>EDIT</Button>
                       </Link>
                       &nbsp;
                       <Button onClick={() => handleDelete(item.id)}>DELETE</Button>
@@ -82,4 +82,4 @@ function AdminPage(){
     
   )
 }
-export default AdminPage;
+export default AdminTranslateTable;
