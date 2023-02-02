@@ -10,10 +10,7 @@ import SignUp from './components/pages/SignUp';
 import Examination from './components/pages/Examination';
 import ProfessionalCourse from './components/pages/ProfessionalCourse';
 import AdminPage from './components/pages/AdminPage';
-import Add from './components/Add';
-import Edit from './components/Edit';
-import AdminTranslateTable from './components/pages/AdminTranslateTable';
-import mysql from "mysql"
+
 
 
 function App() {
@@ -29,19 +26,9 @@ function App() {
         <Route path='/examination' component={Examination} />
         <Route path='/profession' component={ProfessionalCourse} />
         <Route path='/adminPage' component={AdminPage} />
-        <Route path='/create' component={Add} />
-        <Route path='/edit' component={Edit} />
-        <Route path='/adminTr' component={AdminTranslateTable} />
       </Switch>
     </Router>
   );
 }
-
-const db = mysql.createConnection({
-  host:"localhost",
-  user:"root",
-  password:"1234QWERasdf",
-  database:"word_list"
-})
 
 export default App;
