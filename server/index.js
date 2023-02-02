@@ -15,15 +15,21 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.get("/api/get", (req, res) =>{
+    const sqlGet = "SELECT * FROM word";
+    db.query(sqlGet,(error, result) => {
+        res.send(result);
+    });
+});
 
 app.get("/",(req, res) => {
-     const sqlInsert = 
-     "INSERT INTO word (word_name, audio_name) VALUES ('word5', 'audio5')";
-     db.query(sqlInsert, (error, result) =>{
-         console.log("error", error);
-         console.log("result", result);
-         res.send("Hello Express");
-     });
+    // const sqlInsert = 
+    // "INSERT INTO word (word_name, audio_name) VALUES ('word3', 'audio3')";
+    // db.query(sqlInsert, (error, result) =>{
+    //     console.log("error", error);
+    //     console.log("result", result);
+    //     res.send("Hello Express");
+    // });
    
 });
 
