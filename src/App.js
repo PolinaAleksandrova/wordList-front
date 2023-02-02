@@ -13,6 +13,7 @@ import AdminPage from './components/pages/AdminPage';
 import Add from './components/Add';
 import Edit from './components/Edit';
 import AdminTranslateTable from './components/pages/AdminTranslateTable';
+import mysql from "mysql"
 
 
 function App() {
@@ -35,5 +36,12 @@ function App() {
     </Router>
   );
 }
+
+const db = mysql.createConnection({
+  host:"localhost",
+  user:"root",
+  password:"1234QWERasdf",
+  database:"word_list"
+})
 
 export default App;
