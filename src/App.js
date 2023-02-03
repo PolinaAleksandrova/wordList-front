@@ -10,6 +10,7 @@ import SignUp from './components/pages/SignUp';
 import Examination from './components/pages/Examination';
 import ProfessionalCourse from './components/pages/ProfessionalCourse';
 import AdminPage from './components/pages/AdminPage';
+import AddEdit from './components/pages/AddEdit';
 
 
 
@@ -26,6 +27,7 @@ function App() {
         <Route path='/examination' component={Examination} />
         <Route path='/profession' component={ProfessionalCourse} />
         <Route path='/adminPage' component={AdminPage} />
+        <Route path='/addWord' component={AddEdit} />
       </Switch>
     </Router>
   );
