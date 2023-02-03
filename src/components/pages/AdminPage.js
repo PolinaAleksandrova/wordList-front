@@ -20,6 +20,14 @@ const AdminPage = () => {
   useEffect(() =>{
     loadData();
   }, []);
+
+  const deleteWord = (id) => {
+    if(window.confirm("Are you sure that you wanted to delete that contact ?")){
+        axios.delete(`http://localhost:5000/api/remove/${id}`);
+  
+        setTimeout(() => loadData(), 500);
+    }
+  }
   return (
     <div style ={{marginTop: "150px"}}>
       <Link to="/addWord">
@@ -46,7 +54,7 @@ const AdminPage = () => {
                   <Link to={`/update/${item.id}`}>
                   <button className ="btn btn-edit">Edit</button>
                   </Link>
-                  <button className ="btn btn-delete">Delete</button>
+                  <button className ="btn btn-delete" onClick ={() => deleteWord(item.id)}>Delete</button>
                   <Link to={`/view/${item.id}`}>
                   <button className ="btn btn-view">View</button>
                   </Link>

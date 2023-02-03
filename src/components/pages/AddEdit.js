@@ -26,6 +26,7 @@ const AddEdit = () => {
                 setState({word_name:"",audio_name:""});
             })
             .catch((err) => toast.error(err.response.data));
+            toast.success("Word added successfuly");
             setTimeout(() => history.push("/adminPage"),500);
         }
     };
