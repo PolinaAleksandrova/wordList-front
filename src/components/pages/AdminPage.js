@@ -23,7 +23,7 @@ const AdminPage = () => {
   return (
     <div style ={{marginTop: "150px"}}>
       <Link to="/addWord">
-       <button className ="btn btn-word">Add Word</button> 
+       <button className ="btn btn-contact">Add Word</button> 
       </Link>
       
       <table className="styled-table">
@@ -41,7 +41,7 @@ const AdminPage = () => {
               <tr key ={item.id}>
                 <th scope ="row">{index+1}</th>
                 <td>{item.word_name}</td>
-                <td>{item.word_audio}</td>
+                <td>{item.audio_name}</td>
                 <td>
                   <Link to={`/update/${item.id}`}>
                   <button className ="btn btn-edit">Edit</button>
