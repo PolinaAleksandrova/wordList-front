@@ -22,6 +22,16 @@ app.get("/api/get", (req, res) =>{
     });
 });
 
+app.post("/api/post", (req, res) =>{
+    const {word_name, word_audio} = req.body;
+    const sqlInsert = "INSERT INTO word (word_name, audio_name) VALUES (?, ?)";
+    db.query(sqlInsert, [word_name, word_audio], (error, result) => {
+        if(error) {
+            console.log(error);
+        }
+    });
+});
+
 app.get("/",(req, res) => {
     // const sqlInsert = 
     // "INSERT INTO word (word_name, audio_name) VALUES ('word3', 'audio3')";
