@@ -32,6 +32,17 @@ app.post("/api/post", (req, res) =>{
     });
 });
 
+app.delete("/api/remove/:id", (req, res) =>{
+    const {id} = req.params;
+    const sqlRemove =
+    "DELETE FROM word WHERE id =?";
+    db.query(sqlRemove, id, (error, result) => {
+        if(error) {
+            console.log(error);
+        }
+    });
+});
+
 app.get("/",(req, res) => {
     // const sqlInsert = 
     // "INSERT INTO word (word_name, audio_name) VALUES ('word3', 'audio3')";
