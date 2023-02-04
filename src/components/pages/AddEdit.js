@@ -13,20 +13,42 @@ const AddEdit = () => {
     const [state, setState] = useState(initialState);
     const {word_name, audio_name} = state;
     const history = useHistory();
+    const {id} = useParams();
+    
+    useEffect(()=>{
+        axios
+        .get(`http://localhost:5000/api/get/${id}`)
+        .then((resp)=> setState({...resp.data[0]}));
+    },[id]);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if(!word_name || !audio_name){
             toast.error("Please provide value into each input field");
         }else{
-            axios.post("http://localhost:5000/api/post", {
-                word_name,
-                audio_name,
+            if(!id){
+                axios.post("http://localhost:5000/api/post", {
+                    word_name,
+                    audio_name,
+                })
+                .then(()=>{
+                    setState({word_name:"",audio_name:""});
+                })
+                .catch((err) => toast.error(err.response.data));
+                toast.success("Word added successfuly");
+            }else{
+                axios
+                .put(`http://localhost:5000/api/update/${id}`, {
+                    word_name,
+                    audio_name,
             })
             .then(()=>{
                 setState({word_name:"",audio_name:""});
             })
             .catch((err) => toast.error(err.response.data));
-            toast.success("Word added successfuly");
+            toast.success("Word updated successfuly");
+            }
+            
             setTimeout(() => history.push("/adminPage"),500);
         }
     };
@@ -52,7 +74,7 @@ const AddEdit = () => {
                 id = "word_name"
                 name = "word_name"
                 placeholder="Your word_name ..."
-                value={word_name}
+                value={word_name || ""}
                 onChange={handleInputChange}
                 />
                 <label htmlFor="audio_name">audio_name</label>
@@ -61,10 +83,10 @@ const AddEdit = () => {
                 id = "audio_name"
                 name = "audio_name"
                 placeholder="Your audio_name ..."
-                value={audio_name}
+                value={audio_name || ""}
                 onChange={handleInputChange}
                 />
-                <input type ="submit" value="Save"/>
+                <input type ="submit" value={id ? "Update" : "Save"}/>
                 <Link to ="/adminPage">
                     <input type ="button" value ="Go Back"/>
                 </Link>
