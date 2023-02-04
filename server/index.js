@@ -43,6 +43,29 @@ app.delete("/api/remove/:id", (req, res) =>{
     });
 });
 
+app.get("/api/get/:id", (req, res) =>{
+    const {id} = req.params;
+    const sqlGet = "SELECT * FROM word where id = ?";
+    db.query(sqlGet, id, (error, result) => {
+        if(error){
+            console.log(error);
+        }
+        res.send(result);
+    });
+});
+
+app.put("/api/update/:id", (req, res) =>{
+    const {id} = req.params;
+    const {word_name, audio_name} = req.body;
+    const sqlUpdate = "UPDATE word SET word_name = ?, audio_name = ? WHERE id = ?";
+    db.query(sqlUpdate, [word_name, audio_name, id], (error, result) => {
+        if(error){
+            console.log(error);
+        }
+        res.send(result);
+    });
+});
+
 app.get("/",(req, res) => {
     // const sqlInsert = 
     // "INSERT INTO word (word_name, audio_name) VALUES ('word3', 'audio3')";
