@@ -12,7 +12,9 @@ import ProfessionalCourse from './components/pages/ProfessionalCourse';
 import AdminPage from './components/pages/AdminPage';
 import AddEdit from './components/pages/AddEdit';
 import View from './components/pages/View';
-
+import TranslateTable from './components/pages/adminTables/TranslateTable';
+import AddEditTranslation from './components/pages/adminTables/AddEditTranslation';
+import ViewTranslation from './components/pages/adminTables/ViewTranslation';
 
 function App() {
   return (
@@ -30,6 +32,11 @@ function App() {
         <Route path='/addWord' component={AddEdit} />
         <Route path='/update/:id' component={AddEdit} />
         <Route path='/view/:id' component={View} />
+        <Route path='/translateTable' component={TranslateTable} />
+        <Route path='/addTranslation' component={AddEditTranslation} />
+        <Route path='/translate/update/:id' component={AddEditTranslation} />
+        <Route path='/translate/view/:id' component={ViewTranslation} />
+
       </Switch>
     </Router>
   );
