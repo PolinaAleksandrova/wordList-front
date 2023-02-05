@@ -22,7 +22,7 @@ const AdminPage = () => {
   }, []);
 
   const deleteWord = (id) => {
-    if(window.confirm("Are you sure that you wanted to delete that contact ?")){
+    if(window.confirm("Are you sure that you want to delete this contact ?")){
         axios.delete(`http://localhost:5000/api/remove/${id}`);
   
         setTimeout(() => loadData(), 500);
@@ -65,7 +65,10 @@ const AdminPage = () => {
         </tbody>
       </table>
     </div>
+
+    
   );
+  
 };
 
 export default AdminPage;
