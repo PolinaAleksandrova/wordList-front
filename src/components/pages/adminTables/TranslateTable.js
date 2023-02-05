@@ -4,16 +4,16 @@ import {toast} from "react-toastify";
 import axios from "axios";
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import '../AdminPage.css';
+import '../../AdminPage.css';
 
 
 
 
-const AdminPage = () => {
+const TranslateTable = () => {
   const [data, setData] = useState([]);
 
   const loadData = async() => {
-    const response = await axios.get("http://localhost:5000/api/get");
+    const response = await axios.get("http://localhost:5000/translate/get");
     setData(response.data);
   };
 
@@ -21,24 +21,24 @@ const AdminPage = () => {
     loadData();
   }, []);
 
-  const deleteWord = (id) => {
-    if(window.confirm("Are you sure that you want to delete this word ?")){
-        axios.delete(`http://localhost:5000/api/remove/${id}`);
+  const deleteTranslation = (id) => {
+    if(window.confirm("Are you sure that you want to delete this translation ?")){
+        axios.delete(`http://localhost:5000/translate/remove/${id}`);
   
         setTimeout(() => loadData(), 500);
     }
   }
   return (
     <div style ={{marginTop: "150px"}}>
-      <Link to="/addWord">
-       <button className ="btn btn-contact">Add Word</button> 
+      <Link to="/addTranslation">
+       <button className ="btn btn-contact">Add Translation</button> 
       </Link>
       
       <table className="styled-table">
         <thead>
           <tr>
             <th style ={{textAlign: "center"}}>Id</th>
-            <th style ={{textAlign: "center"}}>word_name</th>
+            <th style ={{textAlign: "center"}}>translate_name</th>
             <th style ={{textAlign: "center"}}>audio_name</th>
             <th style ={{textAlign: "center"}}>Action</th>
           </tr>
@@ -48,14 +48,14 @@ const AdminPage = () => {
             return (
               <tr key ={item.id}>
                 <th scope ="row">{index+1}</th>
-                <td>{item.word_name}</td>
+                <td>{item.translate_name}</td>
                 <td>{item.audio_name}</td>
                 <td>
-                  <Link to={`/update/${item.id}`}>
+                  <Link to={`/translate/update/${item.id}`}>
                   <button className ="btn btn-edit">Edit</button>
                   </Link>
-                  <button className ="btn btn-delete" onClick ={() => deleteWord(item.id)}>Delete</button>
-                  <Link to={`/view/${item.id}`}>
+                  <button className ="btn btn-delete" onClick ={() => deleteTranslation(item.id)}>Delete</button>
+                  <Link to={`/translate/view/${item.id}`}>
                   <button className ="btn btn-view">View</button>
                   </Link>
                   </td>
@@ -64,10 +64,6 @@ const AdminPage = () => {
           })}
         </tbody>
       </table>
-      <Link to="/translateTable">
-       <button className ="btn btn-trTable">Translate Table</button> 
-      </Link>
-      
     </div>
   
     
@@ -75,4 +71,4 @@ const AdminPage = () => {
   
 };
 
-export default AdminPage;
+export default TranslateTable;

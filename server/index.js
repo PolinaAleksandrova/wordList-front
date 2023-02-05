@@ -74,7 +74,7 @@ app.put("/api/update/:id", (req, res) =>{
 
 /*------------------'translate' TABLE---------------------*/
 /*GET 'translate' TABLE*/
-app.get("/api/get", (req, res) =>{
+app.get("/translate/get", (req, res) =>{
     const sqlGet = "SELECT * FROM translate";
     db.query(sqlGet,(error, result) => {
         res.send(result);
@@ -82,9 +82,9 @@ app.get("/api/get", (req, res) =>{
 });
 
 /*POST 'translate' TABLE*/
-app.post("/api/post", (req, res) =>{
+app.post("/translate/post", (req, res) =>{
     const {translate_name, audio_name} = req.body;
-    const sqlInsert = "INSERT INTO word (translate_name, audio_name) VALUES (?, ?)";
+    const sqlInsert = "INSERT INTO translate (translate_name, audio_name) VALUES (?, ?)";
     db.query(sqlInsert, [translate_name, audio_name], (error, result) => {
         if(error) {
             console.log(error);
@@ -93,7 +93,7 @@ app.post("/api/post", (req, res) =>{
 });
 
 /*DELETE 'translate' TABLE*/
-app.delete("/api/remove/:id", (req, res) =>{
+app.delete("/translate/remove/:id", (req, res) =>{
     const {id} = req.params;
     const sqlRemove =
     "DELETE FROM translate WHERE id =?";
@@ -105,7 +105,7 @@ app.delete("/api/remove/:id", (req, res) =>{
 });
 
 /*GET ID 'translate' TABLE*/
-app.get("/api/get/:id", (req, res) =>{
+app.get("/translate/get/:id", (req, res) =>{
     const {id} = req.params;
     const sqlGet = "SELECT * FROM translate where id = ?";
     db.query(sqlGet, id, (error, result) => {
@@ -117,7 +117,7 @@ app.get("/api/get/:id", (req, res) =>{
 });
 
 /*PUT ID 'translate' TABLE*/
-app.put("/api/update/:id", (req, res) =>{
+app.put("/translate/update/:id", (req, res) =>{
     const {id} = req.params;
     const {translate_name, audio_name} = req.body;
     const sqlUpdate = "UPDATE translate SET translate_name = ?, audio_name = ? WHERE id = ?";
@@ -135,16 +135,16 @@ app.put("/api/update/:id", (req, res) =>{
 
 
 
-app.get("/",(req, res) => {
-    // const sqlInsert = 
-    // "INSERT INTO word (word_name, audio_name) VALUES ('word3', 'audio3')";
-    // db.query(sqlInsert, (error, result) =>{
-    //     console.log("error", error);
-    //     console.log("result", result);
-    //     res.send("Hello Express");
-    // });
+// app.get("/translateTable",(req, res) => {
+//      const sqlInsert = 
+//      "INSERT INTO translate (translate_name, audio_name) VALUES ('123', '456')";
+//      db.query(sqlInsert, (error, result) =>{
+//         console.log("error", error);
+//        console.log("result", result);
+//          res.send("Hello Express");
+//     });
    
-});
+// });
 
 app.listen(5000, () => {
     console.log("Server is running on port 5000");
