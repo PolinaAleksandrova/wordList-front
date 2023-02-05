@@ -15,6 +15,8 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+/*------------------'WORD' TABLE---------------------*/
+/*GET 'WORD' TABLE*/
 app.get("/api/get", (req, res) =>{
     const sqlGet = "SELECT * FROM word";
     db.query(sqlGet,(error, result) => {
@@ -22,6 +24,7 @@ app.get("/api/get", (req, res) =>{
     });
 });
 
+/*POST 'WORD' TABLE*/
 app.post("/api/post", (req, res) =>{
     const {word_name, audio_name} = req.body;
     const sqlInsert = "INSERT INTO word (word_name, audio_name) VALUES (?, ?)";
@@ -32,6 +35,7 @@ app.post("/api/post", (req, res) =>{
     });
 });
 
+/*DELETE 'WORD' TABLE*/
 app.delete("/api/remove/:id", (req, res) =>{
     const {id} = req.params;
     const sqlRemove =
@@ -43,6 +47,7 @@ app.delete("/api/remove/:id", (req, res) =>{
     });
 });
 
+/*GET ID 'WORD' TABLE*/
 app.get("/api/get/:id", (req, res) =>{
     const {id} = req.params;
     const sqlGet = "SELECT * FROM word where id = ?";
@@ -54,6 +59,7 @@ app.get("/api/get/:id", (req, res) =>{
     });
 });
 
+/*PUT ID 'WORD' TABLE*/
 app.put("/api/update/:id", (req, res) =>{
     const {id} = req.params;
     const {word_name, audio_name} = req.body;
@@ -65,6 +71,69 @@ app.put("/api/update/:id", (req, res) =>{
         res.send(result);
     });
 });
+
+/*------------------'translate' TABLE---------------------*/
+/*GET 'translate' TABLE*/
+app.get("/api/get", (req, res) =>{
+    const sqlGet = "SELECT * FROM translate";
+    db.query(sqlGet,(error, result) => {
+        res.send(result);
+    });
+});
+
+/*POST 'translate' TABLE*/
+app.post("/api/post", (req, res) =>{
+    const {translate_name, audio_name} = req.body;
+    const sqlInsert = "INSERT INTO word (translate_name, audio_name) VALUES (?, ?)";
+    db.query(sqlInsert, [translate_name, audio_name], (error, result) => {
+        if(error) {
+            console.log(error);
+        }
+    });
+});
+
+/*DELETE 'translate' TABLE*/
+app.delete("/api/remove/:id", (req, res) =>{
+    const {id} = req.params;
+    const sqlRemove =
+    "DELETE FROM translate WHERE id =?";
+    db.query(sqlRemove, id, (error, result) => {
+        if(error) {
+            console.log(error);
+        }
+    });
+});
+
+/*GET ID 'translate' TABLE*/
+app.get("/api/get/:id", (req, res) =>{
+    const {id} = req.params;
+    const sqlGet = "SELECT * FROM translate where id = ?";
+    db.query(sqlGet, id, (error, result) => {
+        if(error){
+            console.log(error);
+        }
+        res.send(result);
+    });
+});
+
+/*PUT ID 'translate' TABLE*/
+app.put("/api/update/:id", (req, res) =>{
+    const {id} = req.params;
+    const {translate_name, audio_name} = req.body;
+    const sqlUpdate = "UPDATE translate SET translate_name = ?, audio_name = ? WHERE id = ?";
+    db.query(sqlUpdate, [translate_name, audio_name, id], (error, result) => {
+        if(error){
+            console.log(error);
+        }
+        res.send(result);
+    });
+});
+
+
+
+
+
+
 
 app.get("/",(req, res) => {
     // const sqlInsert = 
