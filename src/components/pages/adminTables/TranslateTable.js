@@ -13,7 +13,13 @@ const TranslateTable = () => {
   const [data, setData] = useState([]);
 
   const loadData = async() => {
-    const response = await axios.get("http://localhost:5000/translate/get");
+    const response = await axios.get("http://localhost:8080/translates",{
+      headers: {
+        'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+      },
+      responseType: "json",
+    })
     setData(response.data);
   };
 
@@ -23,7 +29,13 @@ const TranslateTable = () => {
 
   const deleteTranslation = (id) => {
     if(window.confirm("Are you sure that you want to delete this translation ?")){
-        axios.delete(`http://localhost:5000/translate/remove/${id}`);
+        axios.delete(`http://localhost:8080/translates/${id}`,{
+          headers: {
+            'Access-Control-Allow-Origin' : '*',
+            'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+          },
+          responseType: "json",
+        });
   
         setTimeout(() => loadData(), 500);
     }
@@ -38,8 +50,8 @@ const TranslateTable = () => {
         <thead>
           <tr>
             <th style ={{textAlign: "center"}}>Id</th>
-            <th style ={{textAlign: "center"}}>translate_name</th>
-            <th style ={{textAlign: "center"}}>audio_name</th>
+            <th style ={{textAlign: "center"}}>translateName</th>
+            <th style ={{textAlign: "center"}}>audioName</th>
             <th style ={{textAlign: "center"}}>Action</th>
           </tr>
         </thead>
@@ -48,8 +60,8 @@ const TranslateTable = () => {
             return (
               <tr key ={item.id}>
                 <th scope ="row">{index+1}</th>
-                <td>{item.translate_name}</td>
-                <td>{item.audio_name}</td>
+                <td>{item.translateName}</td>
+                <td>{item.audioName}</td>
                 <td>
                   <Link to={`/translate/update/${item.id}`}>
                   <button className ="btn btn-edit">Edit</button>

@@ -5,45 +5,45 @@ import axios from 'axios';
 import {toast} from "react-toastify";
 
 const initialState = {
-    word_name: "",
-    audio_name: ""
+    wordName: "",
+    audioName: ""
 };
 
 const AddEdit = () => {
     const [state, setState] = useState(initialState);
-    const {word_name, audio_name} = state;
+    const {wordName, audioName} = state;
     const history = useHistory();
     const {id} = useParams();
     
     useEffect(()=>{
         axios
-        .get(`http://localhost:5000/api/get/${id}`)
+        .get(`http://localhost:8080/translates/${id}`)
         .then((resp)=> setState({...resp.data[0]}));
     },[id]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(!word_name || !audio_name){
+        if(!wordName || !audioName){
             toast.error("Please provide value into each input field");
         }else{
             if(!id){
-                axios.post("http://localhost:5000/api/post", {
-                    word_name,
-                    audio_name,
+                axios.post("http://localhost:8080/translates", {
+                    wordName,
+                    audioName,
                 })
                 .then(()=>{
-                    setState({word_name:"",audio_name:""});
+                    setState({wordName:"",audioName:""});
                 })
                 .catch((err) => toast.error(err.response.data));
                 toast.success("Word added successfuly");
             }else{
                 axios
-                .put(`http://localhost:5000/api/update/${id}`, {
-                    word_name,
-                    audio_name,
+                .put(`http://localhost:8080/translates/${id}`, {
+                    wordName,
+                    audioName,
             })
             .then(()=>{
-                setState({word_name:"",audio_name:""});
+                setState({wordName:"",audioName:""});
             })
             .catch((err) => toast.error(err.response.data));
             toast.success("Word updated successfuly");
@@ -74,7 +74,7 @@ const AddEdit = () => {
                 id = "word_name"
                 name = "word_name"
                 placeholder="Your word_name ..."
-                value={word_name || ""}
+                value={wordName || ""}
                 onChange={handleInputChange}
                 />
                 <label htmlFor="audio_name">audio_name</label>
@@ -83,7 +83,7 @@ const AddEdit = () => {
                 id = "audio_name"
                 name = "audio_name"
                 placeholder="Your audio_name ..."
-                value={audio_name || ""}
+                value={audioName || ""}
                 onChange={handleInputChange}
                 />
                 <input type ="submit" value={id ? "Update" : "Save"}/>

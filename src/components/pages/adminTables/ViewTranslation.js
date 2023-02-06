@@ -10,8 +10,14 @@ const ViewTranslation = () => {
 
     useEffect(()=>{
         axios
-        .get(`http://localhost:5000/translate/get/${id}`)
-        .then((resp)=> setTranslation({...resp.data[0]}));
+        .get(`http://localhost:8080/translates/${id}`,{
+            headers: {
+              'Access-Control-Allow-Origin' : '*',
+              'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+            },
+            responseType: "json",
+          })
+        .then((resp)=> setTranslation({...resp.data}));
     },[id]);
     return (
         <div style ={{marginTop:"150px"}}>
@@ -24,12 +30,12 @@ const ViewTranslation = () => {
                 <span>{id}</span>
                 <br/>
                 <br/>
-                <strong>translate_name: </strong>
-                <span>{translation.translate_name}</span>
+                <strong>translateName: </strong>
+                <span>{translation.translateName}</span>
                 <br/>
                 <br/>
-                <strong>audio_name: </strong>
-                <span>{translation.audio_name}</span>
+                <strong>audioName: </strong>
+                <span>{translation.audioName}</span>
                 <br/>
                 <br/>
                 <Link to ="/translateTable">

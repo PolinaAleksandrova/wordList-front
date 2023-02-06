@@ -5,45 +5,63 @@ import axios from 'axios';
 import {toast} from "react-toastify";
 
 const initialState = {
-    translate_name: "",
-    audio_name: ""
+    translateName: "",
+    audioName: ""
 };
 
 const AddEditTranslation = () => {
     const [state, setState] = useState(initialState);
-    const {translate_name, audio_name} = state;
+    const {translateName, audioName} = state;
     const history = useHistory();
     const {id} = useParams();
     
     useEffect(()=>{
         axios
-        .get(`http://localhost:5000/translate/get/${id}`)
+        .get(`http://localhost:8080/translates/${id}`,{
+            headers: {
+              'Access-Control-Allow-Origin' : '*',
+              'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+            },
+            responseType: "json",
+          })
         .then((resp)=> setState({...resp.data[0]}));
     },[id]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(!translate_name || !audio_name){
+        if(!translateName || !audioName){
             toast.error("Please provide value into each input field");
         }else{
             if(!id){
-                axios.post("http://localhost:5000/translate/post", {
-                    translate_name,
-                    audio_name,
-                })
+                axios.post("http://localhost:8080/translates", {
+                    translateName,
+                    audioName,
+                },{
+                    headers: {
+                      'Access-Control-Allow-Origin' : '*',
+                      'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+                    },
+                    responseType: "json",
+                  })
                 .then(()=>{
-                    setState({translate_name:"",audio_name:""});
+                    setState({translateName:"",audioName:""});
                 })
                 .catch((err) => toast.error(err.response.data));
                 toast.success("Word added successfuly");
             }else{
                 axios
-                .put(`http://localhost:5000/translate/update/${id}`, {
-                    translate_name,
-                    audio_name,
-            })
+                .put(`http://localhost:8080/translates/${id}`, {
+                    translateName,
+                    audioName,
+            },{
+                headers: {
+                  'Access-Control-Allow-Origin' : '*',
+                  'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+                },
+                responseType: "json",
+              })
             .then(()=>{
-                setState({translate_name:"",audio_name:""});
+                setState({translateName:"",audioName:""});
             })
             .catch((err) => toast.error(err.response.data));
             toast.success("Word updated successfuly");
@@ -68,22 +86,22 @@ const AddEditTranslation = () => {
             
             onSubmit={handleSubmit}
             >
-                <label htmlFor="name">translate_name</label>
+                <label htmlFor="name">translateName</label>
                 <input
                 type ="text"
-                id = "translate_name"
-                name = "translate_name"
-                placeholder="Your translate_name ..."
-                value={translate_name || ""}
+                id = "translateName"
+                name = "translateName"
+                placeholder="Your translateName ..."
+                value={translateName || ""}
                 onChange={handleInputChange}
                 />
-                <label htmlFor="audio_name">audio_name</label>
+                <label htmlFor="audioName">audioName</label>
                 <input
                 type ="text"
-                id = "audio_name"
-                name = "audio_name"
-                placeholder="Your audio_name ..."
-                value={audio_name || ""}
+                id = "audioName"
+                name = "audioName"
+                placeholder="Your audioName ..."
+                value={audioName || ""}
                 onChange={handleInputChange}
                 />
                 <input type ="submit" value={id ? "Update" : "Save"}/>
