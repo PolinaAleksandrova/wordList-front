@@ -4,7 +4,7 @@ import {toast} from "react-toastify";
 import axios from "axios";
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import '../../AdminPage.css';
+import '../../../AdminPage.css';
 
 
 
