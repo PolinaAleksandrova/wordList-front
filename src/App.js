@@ -10,11 +10,16 @@ import SignUp from './components/pages/SignUp';
 import Examination from './components/pages/Examination';
 import ProfessionalCourse from './components/pages/ProfessionalCourse';
 import AdminPage from './components/pages/AdminPage';
-import AddEdit from './components/pages/AddEdit';
 import View from './components/pages/View';
-import TranslateTable from './components/pages/adminTables/TranslateTable';
-import AddEditTranslation from './components/pages/adminTables/AddEditTranslation';
-import ViewTranslation from './components/pages/adminTables/ViewTranslation';
+import TranslateTable from './components/pages/adminTables/Translations/TranslateTable';
+import AddEditTranslation from './components/pages/adminTables/Translations/AddEditTranslation';
+import ViewTranslation from './components/pages/adminTables/Translations/ViewTranslation';
+import AddEditAchievement from './components/pages/adminTables/Achievements/AddEditAchievement';
+import AchievementTable from './components/pages/adminTables/Achievements/AchievementTable';
+import ViewAchievement from './components/pages/adminTables/Achievements/ViewAchievement';
+import AddEditWord from './components/pages/adminTables/Words/AddEditWord';
+import WordTable from './components/pages/adminTables/Words/WordTable';
+import ViewWord from './components/pages/adminTables/Words/ViewWord';
 
 function App() {
   return (
@@ -29,14 +34,20 @@ function App() {
         <Route path='/examination' component={Examination} />
         <Route path='/profession' component={ProfessionalCourse} />
         <Route path='/adminPage' component={AdminPage} />
-        <Route path='/addWord' component={AddEdit} />
-        <Route path='/update/:id' component={AddEdit} />
         <Route path='/view/:id' component={View} />
         <Route path='/translateTable' component={TranslateTable} />
         <Route path='/addTranslation' component={AddEditTranslation} />
         <Route path='/translate/update/:id' component={AddEditTranslation} />
         <Route path='/translate/view/:id' component={ViewTranslation} />
-
+        <Route path='/ac/view/:id' component={ViewTranslation} />
+        <Route path='/achievementTable' component={AchievementTable} />
+        <Route path='/addAchievement' component={AddEditAchievement} />
+        <Route path='/achievement/update/:id' component={AddEditAchievement} />
+        <Route path='/achievement/view/:id' component={ViewAchievement} />
+        <Route path='/wordTable' component={WordTable} />
+        <Route path='/addWord' component={AddEditWord} />
+        <Route path='/word/update/:id' component={AddEditWord} />
+        <Route path='/word/view/:id' component={ViewWord} />
       </Switch>
     </Router>
   );
