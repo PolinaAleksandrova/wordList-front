@@ -28,7 +28,7 @@ const AddEditAchievement = () => {
             },
             responseType: "json",
           })
-        .then((resp)=> setState({...resp.data[0]}));
+        .then((resp)=> setState({...resp.data}));
     },[id]);
 
     const handleSubmit = (e) => {
@@ -104,7 +104,7 @@ const AddEditAchievement = () => {
                 id = "achievementName"
                 name = "achievementName"
                 placeholder="Your achievementName ..."
-                value={achievementName || ""}
+                value={achievementName}
                 onChange={handleInputChange}
                 />
                 <label htmlFor="achievementType">achievementType</label>

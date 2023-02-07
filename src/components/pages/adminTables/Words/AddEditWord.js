@@ -24,7 +24,7 @@ const AddEditWord = () => {
             },
             responseType: "json",
           })
-        .then((resp)=> setState({...resp.data[0]}));
+        .then((resp)=> setState({...resp.data}));
     },[id]);
 
     const handleSubmit = (e) => {
