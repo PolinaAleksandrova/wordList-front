@@ -13,10 +13,10 @@ const AdminPage = () => {
        <button className ="btn btn-trTable">Translate Table</button> 
       </Link>
       <Link to="/wordTable">
-       <button className ="btn btn-trTable">Word Table</button> 
+       <button className ="btn btn-word">Word Table</button> 
       </Link>
       <Link to="/achievementTable">
-       <button className ="btn btn-trTable">Achievement Table</button> 
+       <button className ="btn btn-achievement">Achievement Table</button> 
       </Link>
     </div>
   

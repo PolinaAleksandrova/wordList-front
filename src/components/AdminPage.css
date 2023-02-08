@@ -70,3 +70,15 @@
     left: 25px;
     width: 15%;
 }
+.btn-word {
+    position: fixed;
+    top: 200px;
+    left: 25px;
+    width: 15%;
+}
+.btn-achievement {
+    position: fixed;
+    top: 250px;
+    left: 25px;
+    width: 15%;
+}
