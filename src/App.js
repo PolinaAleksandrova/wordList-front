@@ -48,7 +48,9 @@ function App() {
         <Route path='/addWord' component={AddEditWord} />
         <Route path='/word/update/:id' component={AddEditWord} />
         <Route path='/word/view/:id' component={ViewWord} />
+        <AdminPage />
       </Switch>
+      
     </Router>
   );
 }
