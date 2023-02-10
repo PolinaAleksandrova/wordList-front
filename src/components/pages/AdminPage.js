@@ -5,6 +5,9 @@ import '../AdminPage.css';
 
 
 
+import Sidebar from '../SideBar/Sidebar'
+
+
 
 const AdminPage = () => {
   return (
@@ -18,11 +21,10 @@ const AdminPage = () => {
       <Link to="/achievementTable">
        <button className ="btn btn-achievement">Achievement Table</button> 
       </Link>
+      <Sidebar />;
     </div>
-  
-    
   );
-  
 };
+
 
 export default AdminPage;
