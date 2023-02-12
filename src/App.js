@@ -39,9 +39,8 @@ function App() {
         <Route path='/examination' component={Examination} />
         <Route path='/profession' component={ProfessionalCourse} />
       
-               <SideNavbar />
         <Route path='/adminPage' component={AdminPage} />
-          
+        
         <Route path='/view/:id' component={View} />
         <Route path='/translateTable' component={TranslateTable} />
         <Route path='/addTranslation' component={AddEditTranslation} />
@@ -59,8 +58,6 @@ function App() {
         <Route path='/word/update/:id' component={AddEditWord} />
         <Route path='/word/view/:id' component={ViewWord} />
         
-        <Route path="/team" element={<Team />} />
-        <Route path="/messages" element={<Messages />} />
        
         <AdminPage />
         
