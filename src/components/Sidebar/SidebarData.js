@@ -3,14 +3,14 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
 import * as RiIcons from "react-icons/ri";
-
+import {Link} from "react-router-dom";
 
 
 export const SidebarData = [
   {
     title: "Overview",
     path: "/adminPage",
-    // path: "/overview",
+
     icon: <AiIcons.AiFillHome />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
@@ -19,20 +19,20 @@ export const SidebarData = [
       {
         title: "Users",
         path: "",
-        // path: "/overview/users",
+
         icon: <IoIcons.IoIosPaper />,
       },
       {
-        title: "Revenue",
+        title: "Roles",
         path: "",
-        // path: "/overview/revenue",
+    
         icon: <IoIcons.IoIosPaper />,
       },
     ],
   },
   {
     title: "Tables",
-    // path: "/reports",
+
     path: "/adminPage",
     icon: <IoIcons.IoIosPaper />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
@@ -41,7 +41,7 @@ export const SidebarData = [
     subNav: [
       {
         title: "Word",
-        // path: "/reports/reports1",
+   
         path: "/wordTable",
         icon: <IoIcons.IoIosPaper />,
         cName: "sub-nav",
@@ -49,33 +49,33 @@ export const SidebarData = [
       },
       {
         title: "Translate",
-        // path: "/reports/reports2",
-        path: "/ccc",
+
+        path: "/translateTable",
         icon: <IoIcons.IoIosPaper />,
         cName: "sub-nav",
       },
       {
         title: "Achievement",
-        // path: "/reports/reports3",
-        path: "/ddd",
+     
+        path: "/achievementTable",
         icon: <IoIcons.IoIosPaper />,
       },
     ],
   },
   {
-    title: "Products",
+    title: "Courses",
     path: "",
-    // path: "/products",
+    // path: "/courses",
     icon: <FaIcons.FaCartPlus />,
   },
   {
-    title: "Team",
+    title: "Test",
     path: "/team",
     icon: <IoIcons.IoMdPeople />,
   },
   {
-    title: "Messages",
-    path: "/messages",
+    title: "Category",
+    path: "/category",
     icon: <FaIcons.FaEnvelopeOpenText />,
 
     iconClosed: <RiIcons.RiArrowDownSFill />,
@@ -83,14 +83,14 @@ export const SidebarData = [
 
     subNav: [
       {
-        title: "Message 1",
+        title: "Category 1",
         path: "",
-        // path: "/messages/message1",
+  
         icon: <IoIcons.IoIosPaper />,
       },
       {
-        title: "Message 2",
-        // path: "/messages/message2",
+        title: "Category 2",
+     
         path: "",
         icon: <IoIcons.IoIosPaper />,
       },
