@@ -87,8 +87,8 @@ function Navbar() {
           </li>
           <li>
             <Link
-              to='/adminPage'
-            >
+              to='/adminPage'>
+                
             </Link>
           </li>
         </ul>

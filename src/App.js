@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar';
+import SideNavbar from './components/Sidebar/SideNavbar';
 import './App.css';
 import Home from './components/pages/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -20,12 +21,16 @@ import ViewAchievement from './components/pages/adminTables/Achievements/ViewAch
 import AddEditWord from './components/pages/adminTables/Words/AddEditWord';
 import WordTable from './components/pages/adminTables/Words/WordTable';
 import ViewWord from './components/pages/adminTables/Words/ViewWord';
+import Messages from "./components/Sidebar/adminPages/Messages";
+import Team from "./components/Sidebar/adminPages/Team";
 
 function App() {
   return (
     <Router>
       <Navbar />
+
       <Switch>
+        
         <Route path='/' exact component={Home} />
         <Route path='/courses' component={Courses} />
         <Route path='/tests' component={Tests} />
@@ -33,22 +38,32 @@ function App() {
         <Route path='/sign-up' component={SignUp} />
         <Route path='/examination' component={Examination} />
         <Route path='/profession' component={ProfessionalCourse} />
+      
+               <SideNavbar />
         <Route path='/adminPage' component={AdminPage} />
+          
         <Route path='/view/:id' component={View} />
         <Route path='/translateTable' component={TranslateTable} />
         <Route path='/addTranslation' component={AddEditTranslation} />
         <Route path='/translate/update/:id' component={AddEditTranslation} />
         <Route path='/translate/view/:id' component={ViewTranslation} />
         <Route path='/ac/view/:id' component={ViewTranslation} />
+    
         <Route path='/achievementTable' component={AchievementTable} />
         <Route path='/addAchievement' component={AddEditAchievement} />
         <Route path='/achievement/update/:id' component={AddEditAchievement} />
         <Route path='/achievement/view/:id' component={ViewAchievement} />
+     
         <Route path='/wordTable' component={WordTable} />
         <Route path='/addWord' component={AddEditWord} />
         <Route path='/word/update/:id' component={AddEditWord} />
         <Route path='/word/view/:id' component={ViewWord} />
+        
+        <Route path="/team" element={<Team />} />
+        <Route path="/messages" element={<Messages />} />
+       
         <AdminPage />
+        
       </Switch>
       
     </Router>

@@ -5,7 +5,6 @@ import '../AdminPage.css';
 
 
 
-import Sidebar from '../SideBar/Sidebar'
 
 
 
@@ -21,7 +20,6 @@ const AdminPage = () => {
       <Link to="/achievementTable">
        <button className ="btn btn-achievement">Achievement Table</button> 
       </Link>
-      <Sidebar />;
     </div>
   );
 };
