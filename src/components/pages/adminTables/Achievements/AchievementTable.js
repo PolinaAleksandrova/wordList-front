@@ -64,7 +64,13 @@ const AchievementTable = () => {
               <tr key ={item.id}>
                 <th scope ="row">{index+1}</th>
                 <td>{item.achievementName}</td>
-                <td>{item.achievementType}</td>
+                <td> <select name="cars" id="cars">
+          <option value="Type1">Type1</option>
+          <option value="Type2">Type2</option>
+          <option value="Type3">Type3</option>
+          <option value="Type4">Type4</option>
+        </select>
+        </td>  
                 <td>{item.bricks}</td>
                 <td>{item.description}</td>
                 <td>{item.requirement}</td>
