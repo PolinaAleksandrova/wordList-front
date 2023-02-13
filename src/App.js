@@ -48,10 +48,10 @@ function App() {
         <Route path='/translate/view/:id' component={ViewTranslation} />
         <Route path='/ac/view/:id' component={ViewTranslation} />
     
-        <Route path='/achievementTable' component={AchievementTable} />
-        <Route path='/addAchievement' component={AddEditAchievement} />
-        <Route path='/achievement/update/:id' component={AddEditAchievement} />
-        <Route path='/achievement/view/:id' component={ViewAchievement} />
+        <Route path='/achievementTable' exact component={AchievementTable} />
+        <Route path='/addAchievement' exact component={AddEditAchievement} />
+        <Route path='/achievement/update/:id' exact component={AddEditAchievement} />
+        <Route path='/achievement/view/:id' exact component={ViewAchievement} />
      
         <Route path='/wordTable' component={WordTable} />
         <Route path='/addWord' component={AddEditWord} />
