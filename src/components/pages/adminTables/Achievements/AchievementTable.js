@@ -64,11 +64,11 @@ const AchievementTable = () => {
               <tr key ={item.id}>
                 <th scope ="row">{index+1}</th>
                 <td>{item.achievementName}</td>
-                <td> <select name="cars" id="cars">
-          <option value="Type1">Type1</option>
-          <option value="Type2">Type2</option>
-          <option value="Type3">Type3</option>
-          <option value="Type4">Type4</option>
+                <td> <select name="type" id="type">
+          <option value="Type1">option 1</option>
+          <option value="Type2">option 2</option>
+          <option value="Type3">option 3</option>
+          <option value="Type4">option 4</option>
         </select>
         </td>  
                 <td>{item.bricks}</td>
