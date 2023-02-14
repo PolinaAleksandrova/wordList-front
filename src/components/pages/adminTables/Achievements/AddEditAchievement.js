@@ -15,10 +15,14 @@ const initialState = {
 
 const AddEditAchievement = () => {
     const [state, setState] = useState(initialState);
-    const {achievementName, achievementType, bricks, description, requirement} = state;
+    const {achievementName, bricks, description, requirement} = state;
     const history = useHistory();
     const {id} = useParams();
     
+    const achievementType = ["option 1", "option 2", "option 3","option 4"];
+    const [myValue, setMyValue] = useState(achievementType[0]);
+  
+  
     useEffect(()=>{
         axios
         .get(`http://localhost:8080/achievements/${id}`,{
@@ -108,14 +112,17 @@ const AddEditAchievement = () => {
                 onChange={handleInputChange}
                 />
                 <label htmlFor="achievementType">achievementType</label>
-                <input
-                type ="text"
-                id = "achievementType"
-                name = "achievementType"
-                placeholder="Your achievementType ..."
-                value={achievementType || ""}
-                onChange={handleInputChange}
-                />
+                <div>
+        <select
+          onChange={(e) => setMyValue(e.target.value)}
+          defaultValue={myValue}
+        >
+          {achievementType.map((achievementType, idx) => (
+            <option key={idx}>{achievementType}</option>
+          ))}
+        </select>
+      </div>
+      <label htmlFor="name">bricks</label>
                  <input
                 type ="text"
                 id = "bricks"
@@ -124,6 +131,7 @@ const AddEditAchievement = () => {
                 value={bricks || ""}
                 onChange={handleInputChange}
                 />
+                 <label htmlFor="name">description</label>
                  <input
                 type ="text"
                 id = "description"
@@ -132,6 +140,7 @@ const AddEditAchievement = () => {
                 value={description || ""}
                 onChange={handleInputChange}
                 />
+                 <label htmlFor="name">requirement</label>
                  <input
                 type ="text"
                 id = "requirement"
