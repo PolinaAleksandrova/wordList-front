@@ -21,8 +21,7 @@ import ViewAchievement from './components/pages/adminTables/Achievements/ViewAch
 import AddEditWord from './components/pages/adminTables/Words/AddEditWord';
 import WordTable from './components/pages/adminTables/Words/WordTable';
 import ViewWord from './components/pages/adminTables/Words/ViewWord';
-import Messages from "./components/Sidebar/adminPages/Messages";
-import Team from "./components/Sidebar/adminPages/Team";
+
 
 function App() {
   return (
@@ -58,9 +57,9 @@ function App() {
         <Route path='/word/update/:id' component={AddEditWord} />
         <Route path='/word/view/:id' component={ViewWord} />
         
-       
+      
         <AdminPage />
-        
+
       </Switch>
       
     </Router>
