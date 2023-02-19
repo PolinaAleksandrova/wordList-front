@@ -24,7 +24,7 @@
     font-size: 15px;
   }
   
-  .navbar {
+  .navbarQuiz {
     position: sticky;
     top: 0px;
     left: 0px;
@@ -36,7 +36,7 @@
     background: #fff;
     border-bottom: 1px solid #d5d5d5;
   }
-  .navbar .logo {
+  .navbarQuiz .logo {
     color: #111;
   }
   
