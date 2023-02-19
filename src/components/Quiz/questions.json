@@ -1,0 +1,92 @@
+[
+    {
+      "title": "Which of the following is the correct syntax of including a user defined header files in C++ ?",
+      "options": [
+        "#include [userdefined",
+        "#include “userdefined",
+        "#include <userdefined.h",
+        "#include <userdefined"
+      ],
+      "correctOptionIndex": "2"
+    },
+    {
+      "title": "Which of the following is used for comments in C++ ?",
+      "options": [
+        "/* comment */",
+        "// comment */",
+        "// comment",
+        "both // comment or /* comment */"
+      ],
+      "correctOptionIndex": "4"
+    },
+    {
+      "title": "Which of the following user-defined header file extension used in c++ ?",
+      "options": [
+        "hg",
+        "cpp",
+        "h",
+        "hf"
+      ],
+      "correctOptionIndex": "3"
+    },
+    {
+      "title": "Which of the following is a correct identifier in C++ ?",
+      "options": [
+        "VAR_1234",
+        "$var_name",
+        "7VARNAME",
+        "7var_name"
+      ],
+      "correctOptionIndex": "1"
+    },
+    {
+      "title": "Which of the following is not a type of Constructor in C++?",
+      "options": [
+        "Default constructor",
+        "Parameterized constructor",
+        "Copy constructor",
+        "Friend constructor"
+      ],
+      "correctOptionIndex": "4"
+    },
+    {
+      "title": "Which of the following approach is used by C++?",
+      "options": [
+        "Left-right",
+        "Right-left",
+        "Bottom-up",
+        "Top-down"
+      ],
+      "correctOptionIndex": "3"
+    },
+    {
+      "title": "By default, all the files in C++ are opened in _________ mode.",
+      "options": [
+        "Binary",
+        "VTC",
+        "Text",
+        "ISCII"
+      ],
+      "correctOptionIndex": "3"
+    },
+    {
+      "title": "What is the size of wchar_t in C++?",
+      "options": [
+        "Based on the number of bits in the system",
+        "2 or 4",
+        "4",
+        "2"
+      ],
+      "correctOptionIndex": "1"
+    },
+    {
+      "title": " Which of the following is used to terminate the function declaration in C++?",
+      "options": [
+        ";",
+        "]",
+        ")",
+        ": "
+      ],
+      "correctOptionIndex": "1"
+    }
+  ]
