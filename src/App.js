@@ -21,6 +21,7 @@ import ViewAchievement from './components/pages/adminTables/Achievements/ViewAch
 import AddEditWord from './components/pages/adminTables/Words/AddEditWord';
 import WordTable from './components/pages/adminTables/Words/WordTable';
 import ViewWord from './components/pages/adminTables/Words/ViewWord';
+import QuizPage from './components/pages/QuizPage';
 
 
 function App() {
@@ -57,7 +58,7 @@ function App() {
         <Route path='/word/update/:id' component={AddEditWord} />
         <Route path='/word/view/:id' component={ViewWord} />
         
-      
+        <Route path='/quizPage' component={QuizPage} />
         <AdminPage />
 
       </Switch>
