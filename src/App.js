@@ -22,6 +22,7 @@ import AddEditWord from './components/pages/adminTables/Words/AddEditWord';
 import WordTable from './components/pages/adminTables/Words/WordTable';
 import ViewWord from './components/pages/adminTables/Words/ViewWord';
 import QuizPage from './components/pages/QuizPage';
+import FlashCardPage from './components/pages/FlashCardPage';
 
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
         <Route path='/word/view/:id' component={ViewWord} />
         
         <Route path='/quizPage' component={QuizPage} />
+        <Route path='/flashCards' component={FlashCardPage} />
         <AdminPage />
 
       </Switch>
