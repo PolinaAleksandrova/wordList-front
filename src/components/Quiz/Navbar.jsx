@@ -1,13 +1,10 @@
 import React from "react";
-
-function Navbar(){
-    return(
+function Navbar() {
+    return (
         <div className="navbarQuiz">
-            <div className="logo">
-                Tests
-            </div>
+            <div className="logo">Tests</div>
         </div>
     )
-}
+};
 
 export default Navbar;

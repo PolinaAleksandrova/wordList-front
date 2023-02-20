@@ -1,22 +1,52 @@
-[{
-    "title": "What is Your Continent?",
-    "option" : ["Australia", "Europe", "America", "Aisa"],
-    "correctOptionIndex" : 2
-},
-{
-    "title": "What is Your Name?",
-    "option" : ["Aman", "Franki", "HERO", "Ash"],
-    "correctOptionIndex" : 0
-},{
-    "title": "WHat is fav subject",
-    "option" : ["OOP", "python", "JS", "HTML"],
-    "correctOptionIndex" : 2
-},{
-    "title": "What is Your Fav one piece character",
-    "option" : ["Luffy", "Franki", "Chopper", "zoro"],
-    "correctOptionIndex" : 3
-},{
-    "title": "What is Age",
-    "option" : ["2", "23", "21", "20"],
-    "correctOptionIndex" : 2
-}]
+[
+    {
+        "title": "Which motor is NOT suitable for use as a DC machine?",
+        "options": [
+            "Permanent magnet motor",
+            "Series motor",
+            "Squirrel cage motor",
+            "Synchronous motor"
+        ],
+        "correctOptionIndex": "2"
+    },
+    {
+        "title": "Who is the president of US?",
+        "options": [
+            "Joe Biden",
+            "Barack Obama",
+            "Michael Jackson",
+            "Rangar Lodbrok"
+        ],
+        "correctOptionIndex": "0"
+    },
+    {
+        "title": "What European conflict lasted 116 years?",
+        "options": [
+            "Persian Gulf War",
+            "World War II",
+            "Iraq War",
+            "The Hundred Years War"
+        ],
+        "correctOptionIndex": "3"
+    },
+    {
+        "title": "Who has been called the father of electricity?",
+        "options": [
+            "Thomas Edison",
+            "Michael Faraday",
+            "Albert Einstein",
+            "Leonardo da Vinci"
+        ],
+        "correctOptionIndex": "1"
+    },
+    {
+        "title": "What is the largest animal in the world?",
+        "options": [
+            "The Blue Whale",
+            "African Elephant",
+            "Giraffe",
+            "Brown Bear"
+        ],
+        "correctOptionIndex": "0"
+    }
+]
