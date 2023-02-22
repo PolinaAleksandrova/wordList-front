@@ -20,6 +20,9 @@
     "react-router-dom": "^5.3.4",
     "react-scripts": "3.4.1",
     "react-toastify": "^8.0.0",
+    "reactstrap": "^9.1.6",
+    "remixicon": "^2.5.0",
+    "slick-carousel": "^1.8.1",
     "start": "^5.1.0",
     "styled-components": "^5.3.6",
     "web-vitals": "^3.1.1"

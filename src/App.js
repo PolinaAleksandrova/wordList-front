@@ -24,7 +24,6 @@ import ViewWord from './components/pages/adminTables/Words/ViewWord';
 import QuizPage from './components/pages/QuizPage';
 import FlashCardPage from './components/pages/FlashCardPage';
 
-
 function App() {
   return (
     <Router>
@@ -62,7 +61,7 @@ function App() {
         <Route path='/quizPage' component={QuizPage} />
         <Route path='/flashCards' component={FlashCardPage} />
         <AdminPage />
-
+ 
       </Switch>
       
     </Router>
