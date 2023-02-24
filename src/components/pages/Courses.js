@@ -1,71 +1,133 @@
 import React from "react";
-import { Container, Row, Col } from "reactstrap";
-
+import Slider from "react-slick";
 import "../Courses-section/courses.css";
-import CourseCard from "../Courses-section/CourseCard.jsx";
-import courseImg1 from "../../assets/images/web-design.png"
-import courseImg2 from "../../assets/images/graphics-design.png";
-import courseImg3 from "../../assets/images/ui-ux.png";
+import BasicCard from "../Card";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "red" }}
+      onClick={onClick}
+    >
+      NEXT
+    </div>
+  );
+}
 
-const coursesData = [
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "green" }}
+      onClick={onClick}
+    >
+      BACK
+    </div>
+  );
+}
+
+export default function Courses() {
+  const slider = React.useRef(null);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    arrows: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+
+    // customPaging: function (i) {
+    //   return <p>{i + 1}</p>;
+    // },
+
+    responsive: [
+      {
+        breakpoint: 1424,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+
+      {
+        breakpoint: 1124,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 2,
+        },
+      },
+    ],
+
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+  };
+
+  return (
+    <div>
+      <h1 style={{ textAlign: "center", margin: "20px 0px" }}>
+        REACT-SLICK CAROUSEL
+      </h1>
+
+      <div style={{ margin: 20 }}>
+        <button onClick={() => slider?.current?.slickPrev()}>Prev</button>
+        <button
+          style={{ marginLeft: 20 }}
+          onClick={() => slider?.current?.slickNext()}
+        >
+          Next
+        </button>
+      </div>
+
+      <Slider ref={slider} {...settings}>
+        {products?.map((item, index) => {
+          return <BasicCard item={item} />;
+        })}
+      </Slider>
+    </div>
+  );
+}
+
+const products = [
   {
-    id: "01",
-    title: "Web Design BootCamp-2022 for Beginners",
-    lesson: 12,
-    students: 12.5,
-    rating: 5.9,
-    imgUrl: courseImg1,
+    id: 1,
+    image: "",
+  },
+  {
+    id: 2,
+    image: "",
+  },
+  {
+    id: 3,
+    image: "",
+  },
+  {
+    id: 4,
+    image: "",
   },
 
   {
-    id: "02",
-    title: "Professional Graphics Design, PhotoShop, Adobe XD, Figma",
-    lesson: 12,
-    students: 12.5,
-    rating: 5.9,
-    imgUrl: courseImg2,
+    id: 5,
+    image: "",
   },
-
   {
-    id: "03",
-    title: "UI/UX BootCamp for Beginners in 2022",
-    lesson: 12,
-    students: 12.5,
-    rating: 5.9,
-    imgUrl: courseImg3,
+    id: 6,
+    image: "",
   },
 ];
-
-const Courses = () => {
-  return (
-    <section>
-      <Container>
-        <Row>
-          <Col lg="12" className="mb-5">
-            <div className="course__top d-flex justify-content-between align-items-center">
-              <div className="course__top__left w-50">
-                <h2>Our Popular Courses</h2>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
-                  consequatur libero quod voluptatibus ullam quia quas, vitae
-                  voluptatem recusandae reprehenderit!
-                </p>
-              </div>
-
-              <div className="w-50 text-end">
-                <button className="btn">See All</button>
-              </div>
-            </div>
-          </Col>
-          {coursesData.map((item) => (
-            <Col lg="4" md="6" sm="6">
-              <CourseCard key={item.id} item={item} />
-            </Col>
-          ))}
-        </Row>
-      </Container>
-    </section>
-  );
-};
-
-export default Courses;
