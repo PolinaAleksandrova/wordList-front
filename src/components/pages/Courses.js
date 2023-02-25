@@ -4,6 +4,7 @@ import "../Courses-section/courses.css";
 import BasicCard from "../Card";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -82,7 +83,7 @@ export default function Courses() {
   return (
     <div>
       <h1 style={{ textAlign: "center", margin: "20px 0px" }}>
-        REACT-SLICK CAROUSEL
+        Courses
       </h1>
 
       <div style={{ margin: 20 }}>
@@ -107,11 +108,11 @@ export default function Courses() {
 const products = [
   {
     id: 1,
-    image: "",
+    image: "https://www.woodwardenglish.com/wp-content/uploads/2020/04/english-phrasal-verbs-course.jpg",
   },
   {
     id: 2,
-    image: "",
+    image: "https://www.woodwardenglish.com/wp-content/uploads/2022/09/english-reading-course-read-in-english.jpg",
   },
   {
     id: 3,
