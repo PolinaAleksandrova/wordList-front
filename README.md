@@ -1,6 +1,6 @@
 npm install
 
-npm run server + npm start
+run backend + npm start
 
 localhost:3000/adminPage
 
