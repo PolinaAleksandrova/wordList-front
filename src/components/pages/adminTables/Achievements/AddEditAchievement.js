@@ -15,11 +15,10 @@ const initialState = {
 
 const AddEditAchievement = () => {
     const [state, setState] = useState(initialState);
-    const {achievementName, bricks, description, requirement} = state;
+    const {achievementName, bricks, description, requirement, achievementType} = state;
     const history = useHistory();
     const {id} = useParams();
-    
-    const achievementType = ["option 1", "option 2", "option 3","option 4"];
+  
     const [myValue, setMyValue] = useState(achievementType[0]);
   
   
@@ -111,17 +110,16 @@ const AddEditAchievement = () => {
                 value={achievementName}
                 onChange={handleInputChange}
                 />
-                <label htmlFor="achievementType">achievementType</label>
-                <div>
-        <select
-          onChange={(e) => setMyValue(e.target.value)}
-          defaultValue={myValue}
-        >
-          {achievementType.map((achievementType, idx) => (
-            <option key={idx}>{achievementType}</option>
-          ))}
-        </select>
-      </div>
+                <div className="col-md-6">
+                                <div className="mb-3">
+                                   <label className="form-lable">achievementType</label>
+                                  <select name="status" className="form-control" value={achievementType} onChange={ handleInputChange }>
+                                    <option value="">--Please Select--</option>
+                                    <option value="1">Active</option>
+                                    <option value="0">Inactive</option>
+                                    </select>
+                                </div>
+                            </div>
       <label htmlFor="name">bricks</label>
                  <input
                 type ="text"
@@ -140,6 +138,7 @@ const AddEditAchievement = () => {
                 value={description || ""}
                 onChange={handleInputChange}
                 />
+               
                  <label htmlFor="name">requirement</label>
                  <input
                 type ="text"
