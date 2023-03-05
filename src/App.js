@@ -24,6 +24,7 @@ import ViewWord from './components/pages/adminTables/Words/ViewWord';
 import QuizPage from './components/pages/QuizPage';
 import FlashCardPage from './components/pages/FlashCardPage';
 import MainCourses from './components/pages/mainCourses/MainCourses';
+import DropboxType from './components/pages/adminTables/Achievements/DropboxType';
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
         <Route path='/word/update/:id' component={AddEditWord} />
         <Route path='/word/view/:id' component={ViewWord} />
         
+        <Route path='/dropbox' component={DropboxType} />
         <Route path='/quizPage' component={QuizPage} />
         <Route path='/flashCards' component={FlashCardPage} />
         <Route path ='/mainCourses' component ={MainCourses}/>
