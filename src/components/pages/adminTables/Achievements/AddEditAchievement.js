@@ -15,13 +15,33 @@ const initialState = {
 
 const AddEditAchievement = () => {
     const [state, setState] = useState(initialState);
-    const {achievementName, bricks, description, requirement, achievementType} = state;
+    const {achievementName, bricks, description, requirement} = state;
     const history = useHistory();
     const {id} = useParams();
   
-    const [myValue, setMyValue] = useState(achievementType[0]);
-  
-  
+   /* DRoPDOWM TYPE */
+   const [achievementType, setType] = useState("Type1");
+   useEffect(() => {
+    getTypeById();
+  }, []);
+
+  const updateType = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.patch(`http://localhost:8080/achievements/type/${id}`, {
+        achievementType
+      });
+      history.push("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getTypeById = async () => {
+    const response = await axios.get(`http://localhost:8080/achievements/type/${id}`);
+    setType(response.data.achievementType);
+    
+  };
     useEffect(()=>{
         axios
         .get(`http://localhost:8080/achievements/${id}`,{
@@ -110,16 +130,20 @@ const AddEditAchievement = () => {
                 value={achievementName}
                 onChange={handleInputChange}
                 />
-                <div className="col-md-6">
-                                <div className="mb-3">
-                                   <label className="form-lable">achievementType</label>
-                                  <select name="status" className="form-control" value={achievementType} onChange={ handleInputChange }>
-                                    <option value="">--Please Select--</option>
-                                    <option value="1">Active</option>
-                                    <option value="0">Inactive</option>
-                                    </select>
-                                </div>
-                            </div>
+                <div className="field">
+            <label className="label">achievementType</label>
+            <div className="control">
+              <div className="select is-fullwidth">
+                <select
+                  value={achievementType}
+                  onChange={(e) => setType(e.target.value)}
+                >
+                  <option value="Type1">Type1</option>
+                  <option value="Type2">Type2</option>
+                </select>
+              </div>
+            </div>
+          </div>
       <label htmlFor="name">bricks</label>
                  <input
                 type ="text"
