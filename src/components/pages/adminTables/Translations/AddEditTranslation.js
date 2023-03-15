@@ -16,11 +16,11 @@ const AddEditTranslation = () => {
     const {id} = useParams();
     
     useEffect(()=>{
+        const token = "Bearer " + document.cookie.split('; ').find(cookie => cookie.startsWith('token=')).split('=')[1]; 
         axios
         .get(`http://localhost:8080/translates/${id}`,{
             headers: {
-              'Access-Control-Allow-Origin' : '*',
-              'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+              "Authorization": token
             },
             responseType: "json",
           })
@@ -28,6 +28,7 @@ const AddEditTranslation = () => {
     },[id]);
 
     const handleSubmit = (e) => {
+        const token = "Bearer " + document.cookie.split('; ').find(cookie => cookie.startsWith('token=')).split('=')[1]; 
         e.preventDefault();
         if(!translateName || !audioName){
             toast.error("Please provide value into each input field");
@@ -38,8 +39,7 @@ const AddEditTranslation = () => {
                     audioName,
                 },{
                     headers: {
-                      'Access-Control-Allow-Origin' : '*',
-                      'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+                      'Authorization':token
                     },
                     responseType: "json",
                   })
