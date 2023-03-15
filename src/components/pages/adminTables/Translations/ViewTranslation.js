@@ -7,13 +7,13 @@ const ViewTranslation = () => {
     const [translation, setTranslation] = useState({});
 
     const {id} = useParams();
-
+    const token = document.cookie.split('; ').find(cookie => cookie.startsWith('token=')).split('=')[1]; 
     useEffect(()=>{
         axios
         .get(`http://localhost:8080/translates/${id}`,{
             headers: {
-              'Access-Control-Allow-Origin' : '*',
-              'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json'
             },
             responseType: "json",
           })
