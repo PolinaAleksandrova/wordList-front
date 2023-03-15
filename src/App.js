@@ -24,7 +24,8 @@ import ViewWord from './components/pages/adminTables/Words/ViewWord';
 import QuizPage from './components/pages/QuizPage';
 import FlashCardPage from './components/pages/FlashCardPage';
 import MainCourses from './components/pages/mainCourses/MainCourses';
-
+import Register from './components/pages/Authorization/Register';
+import Login from './components/pages/Authorization/AuthForm';
 
 function App() {
   return (
@@ -41,6 +42,9 @@ function App() {
         <Route path='/examination' component={Examination} />
         <Route path='/profession' component={ProfessionalCourse} />
       
+        <Route path ='/login' component ={Login}/>
+        <Route path ='/register' component ={Register}/>
+
         <Route path='/adminPage' component={AdminPage} />
         
         <Route path='/view/:id' component={View} />
