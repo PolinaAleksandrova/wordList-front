@@ -8,8 +8,8 @@ localhost:3000/quizPage
 
 localhost:3000/flashcards
 
-/login 
+localhost:3000/login 
 
-/register
+localhost:3000/register
 
 backend Controller - @CrossOrigin("*")
