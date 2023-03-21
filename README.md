@@ -8,6 +8,8 @@ localhost:3000/quizPage
 
 localhost:3000/flashcards
 
+localhost:3000/mainCourses
+
 localhost:3000/login 
 
 localhost:3000/register
