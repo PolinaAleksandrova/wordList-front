@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import "./AuthForm.css"
 import { Redirect } from 'react-router-dom';
 
 function AuthForm() {
@@ -24,21 +26,26 @@ function AuthForm() {
       console.error(error);
     }
   }
-
+  const { register,  watch, formState: { errors } } = useForm()
+  const onSubmit = data => console.log(data);
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Email:
-        <input type="email" name="email" value={formData.email} onChange={handleChange} />
-      </label>
-      <br />
-      <label>
-        Password:
-        <input type="password" name="password" value={formData.password} onChange={handleChange} />
-      </label>
-      <br />
-      <button type="submit">Log In</button>
+    <section>
+    <div className="register">
+            <div className="col-1">
+                <h2>Sign In</h2>
+                <span>register and enjoy the service</span>
+    <form id='form' className='flex flex-col' onSubmit={handleSubmit}>
+      <input type="email" {...register("email")} value={formData.email} onChange={handleChange} placeholder='username' />
+                    <input type="password" {...register("password")} value={formData.password} onChange={handleChange} placeholder='password' />
+                   
+                    {errors.email?.type === "required" && "Mobile Number is required"}
+                    {errors.password?.type === "maxLength" && "Max Length Exceed"}
+                    <button type="submit">Sign In</button>
+    
     </form>
+    </div>
+    </div>
+    </section>
   );
 }
 
