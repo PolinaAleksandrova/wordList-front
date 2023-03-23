@@ -33,7 +33,7 @@ function AuthForm() {
     <div className="register">
             <div className="col-1">
                 <h2>Sign In</h2>
-                <span>register and enjoy the service</span>
+                <span>sign in and enjoy the service</span>
     <form id='form' className='flex flex-col' onSubmit={handleSubmit}>
       <input type="email" {...register("email")} value={formData.email} onChange={handleChange} placeholder='username' />
                     <input type="password" {...register("password")} value={formData.password} onChange={handleChange} placeholder='password' />

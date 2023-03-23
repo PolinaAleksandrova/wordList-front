@@ -38,7 +38,7 @@ function App() {
         <Route path='/courses' component={Courses} />
         <Route path='/tests' component={Tests} />
         <Route path='/contact-us' component={ContactUs} />
-        <Route path='/sign-up' component={SignUp} />
+        <Route path='/sign-up' component={Register} />
         <Route path='/examination' component={Examination} />
         <Route path='/profession' component={ProfessionalCourse} />
       

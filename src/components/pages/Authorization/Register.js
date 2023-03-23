@@ -32,7 +32,7 @@ function RegisterForm() {
     <section>
     <div className="register">
             <div className="col-1">
-                <h2>Sign In</h2>
+                <h2>Sign Up</h2>
                 <span>register and enjoy the service</span>
     <form id='form' className='flex flex-col' onSubmit={handleSubmit}>
     <input type="text" {...register("firstname")} value={formData.firstname} onChange={handleChange} placeholder='firstname' />
