@@ -11,15 +11,13 @@
 }
 
 .register{
-  max-width: 475px;
-  max-height: max-content;
-  margin-top: 90px;
+  max-width: 550px;
+  margin-top: 5%;
   width: 100vw;
   display:flex;
   border: 1px solid #e9ecef;
-  border-radius: 5px;
-  margin: auto;
-  padding: 23px;
+  border-radius: 24px;
+  margin-left: 30%;
   box-shadow: 1px 3px 10px #e9ecef;
   background-color: white;
 }
@@ -71,11 +69,10 @@
   align-self: flex-end;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  display: none;
 }
 
-@media screen and (min-width: 860px)  {
+@media screen and (min-width: 960px)  {
   .register .col-2 img{
-    display: initial;
+    display: none;
   }
 }
