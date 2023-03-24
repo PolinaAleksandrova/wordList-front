@@ -13,6 +13,7 @@
 .register{
   max-width: 475px;
   max-height: max-content;
+  margin-top: 90px;
   width: 100vw;
   display:flex;
   border: 1px solid #e9ecef;
