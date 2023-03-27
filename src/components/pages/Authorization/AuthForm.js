@@ -35,7 +35,7 @@ function AuthForm() {
                 <h2>Sign In</h2>
                 <span>sign in and enjoy the service</span>
     <form id='form' className='flex flex-col' onSubmit={handleSubmit}>
-      <input type="email" {...register("email")} value={formData.email} onChange={handleChange} placeholder='username' />
+      <input type="email" {...register("email")} value={formData.email} onChange={handleChange} placeholder='email' />
                     <input type="password" {...register("password")} value={formData.password} onChange={handleChange} placeholder='password' />
                    
                     {errors.email?.type === "required" && "Mobile Number is required"}

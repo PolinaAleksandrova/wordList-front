@@ -37,7 +37,7 @@ function RegisterForm() {
     <form id='form' className='flex flex-col' onSubmit={handleSubmit}>
     <input type="text" {...register("firstname")} value={formData.firstname} onChange={handleChange} placeholder='firstname' />
     <input type="text" {...register("lastname")} value={formData.lastname} onChange={handleChange} placeholder='lastname' />
-      <input type="email" {...register("email")} value={formData.email} onChange={handleChange} placeholder='username' />
+      <input type="email" {...register("email")} value={formData.email} onChange={handleChange} placeholder='email' />
                     <input type="password" {...register("password")} value={formData.password} onChange={handleChange} placeholder='password' />
                    
                     {errors.email?.type === "required" && "Mobile Number is required"}
