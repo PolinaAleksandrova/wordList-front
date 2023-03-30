@@ -82,7 +82,7 @@ export default function Courses() {
 
   return (
     <div>
-      <h1 style={{ textAlign: "center", margin: "20px 0px" }}>
+      <h1 style={{ textAlign: "center", margin: "62px 0px" }}>
         Courses
       </h1>
 
