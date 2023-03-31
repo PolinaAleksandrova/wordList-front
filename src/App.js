@@ -43,7 +43,7 @@ function App() {
         <Route path='/profession' component={ProfessionalCourse} />
       
         <Route path ='/login' component ={Login}/>
-        <Route path ='/register' component ={Register}/>
+     
 
         <Route path='/adminPage' component={AdminPage} />
         
