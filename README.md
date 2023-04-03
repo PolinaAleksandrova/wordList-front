@@ -12,6 +12,6 @@ localhost:3000/mainCourses
 
 localhost:3000/login 
 
-localhost:3000/sign-up
+localhost:3000/register
 
 backend Controller - @CrossOrigin("*")
