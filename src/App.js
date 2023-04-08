@@ -26,6 +26,7 @@ import FlashCardPage from './components/pages/FlashCardPage';
 import MainCourses from './components/pages/mainCourses/MainCourses';
 import Register from './components/pages/Authorization/Register';
 import Login from './components/pages/Authorization/AuthForm';
+import FirstTest from './components/pages/Tests/FirstTest';
 
 function App() {
   return (
@@ -68,6 +69,7 @@ function App() {
         <Route path='/quizPage' component={QuizPage} />
         <Route path='/flashCards' component={FlashCardPage} />
         <Route path ='/mainCourses' component ={MainCourses}/>
+        <Route path ='/test1' component ={FirstTest}/>
         <AdminPage />
  
       </Switch>
