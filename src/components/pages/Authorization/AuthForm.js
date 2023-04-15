@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import "./AuthForm.css"
 import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function AuthForm() {
   const [formData, setFormData] = useState({
@@ -38,9 +39,11 @@ function AuthForm() {
       <input type="email" {...register("email")} value={formData.email} onChange={handleChange} placeholder='email' />
                     <input type="password" {...register("password")} value={formData.password} onChange={handleChange} placeholder='password' />
                    
-                    {errors.email?.type === "required" && "Mobile Number is required"}
+                    {errors.email?.type === "required" && "Email is required"}
                     {errors.password?.type === "maxLength" && "Max Length Exceed"}
                     <button type="submit">Sign In</button>
+                    <Link to='sign-up'>
+                    <span className="navForms">Don't have an account? Registr here.</span></Link>
     
     </form>
     </div>

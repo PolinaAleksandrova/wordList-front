@@ -2,7 +2,8 @@ import axios from 'axios';
 import { useState } from 'react';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import "./AuthForm.css"
+import "./AuthForm.css";
+import { Link } from 'react-router-dom';
 function RegisterForm() {
   const [formData, setFormData] = useState({
     firstname: '',
@@ -43,7 +44,8 @@ function RegisterForm() {
                     {errors.email?.type === "required" && "Mobile Number is required"}
                     {errors.password?.type === "maxLength" && "Max Length Exceed"}
                     <button type="submit">Register</button>
-    
+                    <Link to='login'>
+                    <span className="navForms2">Already have an account? Login here.</span></Link>
     </form>
     </div>
     </div>
