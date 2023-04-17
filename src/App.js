@@ -27,6 +27,7 @@ import MainCourses from './components/pages/mainCourses/MainCourses';
 import Register from './components/pages/Authorization/Register';
 import Login from './components/pages/Authorization/AuthForm';
 import FirstTest from './components/pages/Tests/FirstTest';
+import UserPage from './components/pages/UserPage';
 
 function App() {
   return (
@@ -43,6 +44,9 @@ function App() {
         <Route path='/examination' component={Examination} />
         <Route path='/profession' component={ProfessionalCourse} />
       
+        <Route path='/userPage' component={UserPage} />
+
+
         <Route path ='/login' component ={Login}/>
      
 
