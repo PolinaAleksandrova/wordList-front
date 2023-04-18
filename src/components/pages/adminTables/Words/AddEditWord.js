@@ -16,11 +16,11 @@ const AddEditWord = () => {
     const {id} = useParams();
     
     useEffect(()=>{
+        const token = "Bearer " + document.cookie.split('; ').find(cookie => cookie.startsWith('token=')).split('=')[1];
         axios
         .get(`http://localhost:8080/words/${id}`,{
             headers: {
-              'Access-Control-Allow-Origin' : '*',
-              'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+                "Authorization": token
             },
             responseType: "json",
           })
@@ -28,6 +28,7 @@ const AddEditWord = () => {
     },[id]);
 
     const handleSubmit = (e) => {
+        const token = "Bearer " + document.cookie.split('; ').find(cookie => cookie.startsWith('token=')).split('=')[1]; 
         e.preventDefault();
         if(!wordName || !audioName){
             toast.error("Please provide value into each input field");
@@ -55,8 +56,7 @@ const AddEditWord = () => {
                     audioName,
             },{
                 headers: {
-                  'Access-Control-Allow-Origin' : '*',
-                  'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+                    'Authorization':token
                 },
                 responseType: "json",
               })
