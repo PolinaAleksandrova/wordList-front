@@ -16,4 +16,6 @@ localhost:3000/sign-up
 
 localhost:3000/test1
 
+localhost:3000/userPage
+
 backend Controller - @CrossOrigin("*")
