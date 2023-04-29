@@ -18,4 +18,6 @@ localhost:3000/test1
 
 localhost:3000/userPage
 
+localhost:3000/courses
+
 backend Controller - @CrossOrigin("*")
