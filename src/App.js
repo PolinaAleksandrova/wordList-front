@@ -28,6 +28,7 @@ import Register from './components/pages/Authorization/Register';
 import Login from './components/pages/Authorization/AuthForm';
 import FirstTest from './components/pages/Tests/FirstTest';
 import UserPage from './components/pages/UserPage';
+import ForgotPassword from './components/pages/Authorization/ForgotPassword';
 
 function App() {
   return (
@@ -48,7 +49,7 @@ function App() {
 
 
         <Route path ='/login' component ={Login}/>
-     
+        <Route path ='/forgotPassword' component ={ForgotPassword}/>
 
         <Route path='/adminPage' component={AdminPage} />
         
