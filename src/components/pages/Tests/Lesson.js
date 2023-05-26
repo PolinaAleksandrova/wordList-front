@@ -7,7 +7,6 @@ const ProgressBar = ({ percent, showQuitModal }) => (
       style={{ flex: 1, color: "#ccc", fontSize: 50, cursor: "pointer" }}
       onClick={showQuitModal}
     >
-      ×
     </div>
     <div
       style={{

@@ -27,7 +27,7 @@ import MainCourses from './components/pages/mainCourses/MainCourses';
 import Register from './components/pages/Authorization/Register';
 import Login from './components/pages/Authorization/AuthForm';
 import FirstTest from './components/pages/Tests/FirstTest';
-import UserPage from './components/pages/UserPage';
+import UserPage from './components/pages/userProfile/UserPage';
 import ForgotPassword from './components/pages/Authorization/ForgotPassword';
 
 function App() {
