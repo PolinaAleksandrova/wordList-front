@@ -36,8 +36,7 @@ function RegisterForm() {
                 <h2>Forgot Password?</h2>
                 <span>Enter your email and we'll send you intructions to reset your password</span>
     <form id='form' className='flex flex-col' onSubmit={handleSubmit}>
-      <input type="email" {...register("email")} value={formData.email} onChange={handleChange} placeholder='email' />
-                    <input type="password" {...register("password")} value={formData.password} onChange={handleChange} placeholder='password' />
+      
                    
                     {errors.email?.type === "required" && "email is required"}
             
