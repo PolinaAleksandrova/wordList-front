@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Learn from "./Learn";
-import Lesson from "./Lesson";
+import Learn from "../Tests/Learn";
+import Lesson from "../Tests/Lesson";
 
 class App extends Component {
   state = { route: "LESSON" };

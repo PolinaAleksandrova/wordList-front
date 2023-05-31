@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import questions from "./mockQuestions.json";
+import questions from "../Tests/mockQuestions.json";
 
 const ProgressBar = ({ percent, showQuitModal }) => (
   <div style={{ display: "flex", alignItems: "center" }}>
@@ -7,6 +7,7 @@ const ProgressBar = ({ percent, showQuitModal }) => (
       style={{ flex: 1, color: "#ccc", fontSize: 50, cursor: "pointer" }}
       onClick={showQuitModal}
     >
+      ×
     </div>
     <div
       style={{
@@ -307,8 +308,8 @@ const checkAnswer = ({
     correctAnswers:
       correctAnswers +
       (solutions.includes(
-        selectedBlockIds.map(id => blocks.find(b => b.id === id).text).join("")
-      )
+        selectedBlockIds.map(id => blocks.find(b => b.id === id).text).join(" ")
+      )      
         ? 1
         : 0),
     answered: true
