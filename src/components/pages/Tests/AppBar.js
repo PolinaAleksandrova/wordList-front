@@ -1,9 +1,14 @@
 import React, { Component } from "react";
-
-
-
-
-
+import { withStyles } from "@material-ui/core/styles";
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from '@material-ui/icons/Menu';
+import MoreVert from "@material-ui/icons/MoreVert";
+import Whatshot from "@material-ui/icons/Whatshot";
+import { Menu } from '@material-ui/core';
+import { MenuItem } from '@material-ui/core';
 
 const styles = {
   root: {
@@ -38,13 +43,55 @@ class TopAppBar extends Component {
     const open = Boolean(anchorEl);
     return (
       <div className={classes.root}>
-
-      
-           
-             
+        <AppBar position="static" color="default">
+          <Toolbar>
+            <IconButton
+              className={classes.menuButton}
+              color="default"
+              aria-label="Menu"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography type="title" color="default" className={classes.flex}>
+              English
+            </Typography>
+            <IconButton>
+              <Whatshot />
+            </IconButton>
+            <div>
+              <IconButton
+                aria-owns={open ? "menu-appbar" : null}
+                aria-haspopup="true"
+                onClick={this.handleMenu}
+                color="default"
+              >
+                <MoreVert />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right"
+                }}
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right"
+                }}
+                open={open}
+                onClose={this.handleClose}
+              >
+                <MenuItem onClick={this.handleClose}>Settings</MenuItem>
+                <MenuItem onClick={this.handleClose}>Progress Sharing</MenuItem>
+                <MenuItem onClick={this.handleClose}>Feedback</MenuItem>
+                <MenuItem onClick={this.handleClose}>Log out</MenuItem>
+              </Menu>
             </div>
-
+          </Toolbar>
+        </AppBar>
+      </div>
     );
   }
 }
 
+export default withStyles(styles)(TopAppBar);

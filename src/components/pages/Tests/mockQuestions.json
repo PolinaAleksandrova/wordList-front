@@ -1,137 +1,39 @@
 [
-    {
-      "sentence": [
-        {
-          "text": "I",
-          "translations": ["", ""]
-        },
-        {
-          "text": "stuck on a stamp",
-          "translations": ["", ""]
-        }
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "text": "",
-          "sound": "1.mp3"
-        },
-        {
-          "id": "2",
-          "text": "",
-          "sound": "2.mp3"
-        },
-        {
-          "id": "3",
-          "text": "",
-          "sound": "3.mp3"
-        },
-        {
-          "id": "4",
-          "text": "",
-          "sound": "4.mp3"
-        },
-        {
-          "id": "5",
-          "text": "",
-          "sound": "5.mp3"
-        },
-        {
-          "id": "6",
-          "text": "",
-          "sound": "6.mp3"
-        },
-        {
-          "id": "7",
-          "text": "",
-          "sound": "7.mp3"
-        },
-        {
-          "id": "8",
-          "text": "",
-          "sound": "8.mp3"
-        },
-        {
-          "id": "9",
-          "text": "",
-          "sound": "9.mp3"
-        },
-        {
-          "id": "10",
-          "text": "",
-          "sound": "10.mp3"
-        }
-      ],
-      "solutions": [""]
-    },
-    {
-      "sentence": [
-        {
-          "text": "I",
-          "translations": ["я", "я"]
-        },
-        {
-          "text": "like",
-          "translations": ["люблю"]
-        },
-        {
-          "text": "cats",
-          "translations": ["котов"]
-        }
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "text": "",
-          "sound": "wo.mp3"
-        },
-        {
-          "id": "2",
-          "text": "",
-          "sound": ".mp3"
-        },
-        {
-          "id": "3",
-          "text": "",
-          "sound": ".mp3"
-        },
-        {
-          "id": "4",
-          "text": "",
-          "sound": ".mp3"
-        },
-        {
-          "id": "5",
-          "text": "",
-          "sound": ".mp3"
-        },
-        {
-          "id": "6",
-          "text": "",
-          "sound": ".mp3"
-        },
-        {
-          "id": "7",
-          "text": "",
-          "sound": ".mp3"
-        },
-        {
-          "id": "8",
-          "text": "",
-          "sound": "hari.mp3"
-        },
-        {
-          "id": "9",
-          "text": "",
-          "sound": ".mp3"
-        },
-        {
-          "id": "10",
-          "text": "",
-          "sound": ".mp3"
-        }
-      ],
-      "solutions": [""]
-    }
-  ]
-  
+  {
+    "sentence": [
+      {
+        "id": "1",
+        "text": "Я",
+        "translations": ["I"]
+      },
+      {
+        "id": "2",
+        "text": "люблю",
+        "translations": ["like"]
+      },
+      {
+        "id": "3",
+        "text": "кошек",
+        "translations": ["cats"]
+      }
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "text": "I",
+        "sound": "I.mp3"
+      },
+      {
+        "id": "2",
+        "text": "like",
+        "sound": "like.mp3"
+      },
+      {
+        "id": "3",
+        "text": "cats",
+        "sound": "cats.mp3"
+      }
+    ],
+    "solutions": ["Ilikecats"]
+  }
+]
