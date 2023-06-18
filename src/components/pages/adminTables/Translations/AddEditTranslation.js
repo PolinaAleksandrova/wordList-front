@@ -61,7 +61,7 @@ const AddEditTranslation = () => {
                 responseType: "json",
               })
             .then(()=>{
-                setState({translateName:"", audioName:""});
+                setState({translateName:"",audioName:""});
             })
             .catch((err) => toast.error(err.response.data));
             toast.success("Word updated successfuly");

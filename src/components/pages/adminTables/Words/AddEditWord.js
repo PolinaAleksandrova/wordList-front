@@ -30,22 +30,21 @@ const AddEditWord = () => {
     const handleSubmit = (e) => {
         const token = "Bearer " + document.cookie.split('; ').find(cookie => cookie.startsWith('token=')).split('=')[1]; 
         e.preventDefault();
-        if(!wordName || !audioName){
+        if(!wordName || !audioName ){
             toast.error("Please provide value into each input field");
         }else{
             if(!id){
                 axios.post("http://localhost:8080/words", {
                     wordName,
-                    audioName,
+                    audioName
                 },{
                     headers: {
-                      'Access-Control-Allow-Origin' : '*',
-                      'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+                        'Authorization':token
                     },
                     responseType: "json",
                   })
                 .then(()=>{
-                    setState({wordName:"",audioName:""});
+                    setState({wordName:"", audioName:""});
                 })
                 .catch((err) => toast.error(err.response.data));
                 toast.success("Word added successfuly");
@@ -53,10 +52,11 @@ const AddEditWord = () => {
                 axios
                 .put(`http://localhost:8080/words/${id}`, {
                     wordName,
-                    audioName,
+                    audioName
             },{
                 headers: {
-                    'Authorization':token
+                    'Access-Control-Allow-Origin' : '*',
+                  'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
                 },
                 responseType: "json",
               })
@@ -104,6 +104,7 @@ const AddEditWord = () => {
                 value={audioName || ""}
                 onChange={handleInputChange}
                 />
+                
                 <input type ="submit" value={id ? "Update" : "Save"}/>
                 <Link to ="/wordTable">
                     <input type ="button" value ="Go Back"/>
