@@ -13,10 +13,12 @@ const AchievementTable = () => {
   const [data, setData] = useState([]);
 
   const loadData = async() => {
+    const token = "Bearer " + document.cookie.split('; ').find(cookie => cookie.startsWith('token=')).data.split('=')[1];
+    console.log(token)
     const response = await axios.get("http://localhost:8080/achievements",{
       headers: {
-        'Access-Control-Allow-Origin' : '*',
-        'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+        'Authorization': token,
+        'Content-Type': 'application/json'
       },
       responseType: "json",
     })
@@ -29,10 +31,10 @@ const AchievementTable = () => {
 
   const deleteAchievement = (id) => {
     if(window.confirm("Are you sure that you want to delete this achievement ?")){
+      const token = "Bearer " + document.cookie.split('; ').find(cookie => cookie.startsWith('token=')).split('=')[1];  
         axios.delete(`http://localhost:8080/achievements/${id}`,{
           headers: {
-            'Access-Control-Allow-Origin' : '*',
-            'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+            'Authorization':token
           },
           responseType: "json",
         });

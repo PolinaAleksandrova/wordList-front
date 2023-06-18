@@ -15,33 +15,10 @@ const initialState = {
 
 const AddEditAchievement = () => {
     const [state, setState] = useState(initialState);
-    const {achievementName, bricks, description, requirement} = state;
+    const {achievementName, achievementType, bricks, description, requirement} = state;
     const history = useHistory();
     const {id} = useParams();
-  
-   /* DRoPDOWM TYPE */
-   const [achievementType, setType] = useState("Type1");
-   useEffect(() => {
-    getTypeById();
-  }, []);
-
-  const updateType = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.patch(`http://localhost:8080/achievements/type/${id}`, {
-        achievementType
-      });
-      history.push("/");
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const getTypeById = async () => {
-    const response = await axios.get(`http://localhost:8080/achievements/type/${id}`);
-    setType(response.data.achievementType);
     
-  };
     useEffect(()=>{
         axios
         .get(`http://localhost:8080/achievements/${id}`,{
@@ -130,21 +107,15 @@ const AddEditAchievement = () => {
                 value={achievementName}
                 onChange={handleInputChange}
                 />
-                <div className="field">
-            <label className="label">achievementType</label>
-            <div className="control">
-              <div className="select is-fullwidth">
-                <select
-                  value={achievementType}
-                  onChange={(e) => setType(e.target.value)}
-                >
-                  <option value="Type1">Type1</option>
-                  <option value="Type2">Type2</option>
-                </select>
-              </div>
-            </div>
-          </div>
-      <label htmlFor="name">bricks</label>
+                <label htmlFor="achievementType">achievementType</label>
+                <input
+                type ="text"
+                id = "achievementType"
+                name = "achievementType"
+                placeholder="Your achievementType ..."
+                value={achievementType || ""}
+                onChange={handleInputChange}
+                />
                  <input
                 type ="text"
                 id = "bricks"
@@ -153,7 +124,6 @@ const AddEditAchievement = () => {
                 value={bricks || ""}
                 onChange={handleInputChange}
                 />
-                 <label htmlFor="name">description</label>
                  <input
                 type ="text"
                 id = "description"
@@ -162,8 +132,6 @@ const AddEditAchievement = () => {
                 value={description || ""}
                 onChange={handleInputChange}
                 />
-               
-                 <label htmlFor="name">requirement</label>
                  <input
                 type ="text"
                 id = "requirement"
