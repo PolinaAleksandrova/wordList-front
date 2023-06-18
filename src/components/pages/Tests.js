@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "../Courses-section/courses.css";
 import BasicCard from "../Card";
+import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -31,7 +32,7 @@ function SamplePrevArrow(props) {
   );
 }
 
-export default function Tests() {
+export default function Courses() {
   const slider = React.useRef(null);
 
   const settings = {
@@ -83,7 +84,7 @@ export default function Tests() {
   return (
     <div>
       <h1 style={{ textAlign: "center", margin: "62px 0px" }}>
-        Courses
+        Tests
       </h1>
 
       <div style={{ margin: 20 }}>
@@ -98,7 +99,11 @@ export default function Tests() {
 
       <Slider ref={slider} {...settings}>
         {products?.map((item, index) => {
-          return <BasicCard item={item} />;
+          return (
+            <Link to={item.link} key={item.id}>
+              <BasicCard item={item} />
+            </Link>
+          );
         })}
       </Slider>
     </div>
@@ -108,27 +113,33 @@ export default function Tests() {
 const products = [
   {
     id: 1,
-    image: "https://www.woodwardenglish.com/wp-content/uploads/2020/04/english-phrasal-verbs-course.jpg",
+    image: "https://img.freepik.com/premium-vector/job-exam-test-vector-illustration_138676-243.jpg",
+    link: "/testA1"
   },
   {
     id: 2,
-    image: "https://www.woodwardenglish.com/wp-content/uploads/2022/09/english-reading-course-read-in-english.jpg",
+    image: "https://img.freepik.com/premium-vector/job-exam-test-vector-illustration_138676-243.jpg",
+    link: "/testA2"
   },
   {
     id: 3,
-    image: "",
+    image: "https://img.freepik.com/premium-vector/job-exam-test-vector-illustration_138676-243.jpg",
+    link: "/testB1"
   },
   {
     id: 4,
-    image: "",
+    image: "https://img.freepik.com/premium-vector/job-exam-test-vector-illustration_138676-243.jpg",
+    link: "/testB2"
   },
 
   {
     id: 5,
-    image: "",
+    image: "https://img.freepik.com/premium-vector/job-exam-test-vector-illustration_138676-243.jpg",
+    link: "/testC1"
   },
   {
     id: 6,
-    image: "",
+    image: "https://img.freepik.com/premium-vector/job-exam-test-vector-illustration_138676-243.jpg",
+    link: "/testC2"
   },
 ];

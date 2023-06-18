@@ -7,19 +7,19 @@ function Contact() {
   return (
     <div className="MainCourses">
       <div className="welcome">
-        <h1 className="welcome-title">Контактная информация</h1>
-        <p className="welcome-description">Ознакомьтесь с контактной информацией, чтобы связаться с нами</p>
+        <h1 className="welcome-title">Контактна інформація</h1>
+        <p className="welcome-description">Ознайомтеся з контактною інформацією, щоб зв'язатися з нами</p>
       </div>
       <div className="cardGrid">
         {/* Карточки */}
       </div>
 
       <div className="contact">
-        <h2 className="contact-title">Контактная информация</h2>
+        <h2 className="contact-title">Контактна інформація</h2>
         <div className="contact-info">
           <p>Email: example@example.com</p>
           <p>Телефон: +1 234 567 890</p>
-          <p>Адрес: г. Название города, ул. Название улицы, дом 123</p>
+          <p>Адреса: м. Назва міста, вул. Назва вулиці, будинок 123</p>
         </div>
         <div className="contact-map">
           <iframe
@@ -35,7 +35,7 @@ function Contact() {
       </div>
 
       <div className="footer">
-        © 2023 Все права защищены
+        © 2023 Всі права захищені
       </div>
     </div>
   );

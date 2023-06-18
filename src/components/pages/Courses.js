@@ -116,19 +116,19 @@ const products = [
   },
   {
     id: 3,
-    image: "",
+    image: "https://www.woodwardenglish.com/wp-content/uploads/2020/04/english-phrasal-verbs-course.jpg",
   },
   {
     id: 4,
-    image: "",
+    image: "https://www.woodwardenglish.com/wp-content/uploads/2022/09/english-reading-course-read-in-english.jpg",
   },
 
   {
     id: 5,
-    image: "",
+    image: "https://www.woodwardenglish.com/wp-content/uploads/2020/04/english-phrasal-verbs-course.jpg",
   },
   {
     id: 6,
-    image: "",
+    image: "https://www.woodwardenglish.com/wp-content/uploads/2022/09/english-reading-course-read-in-english.jpg",
   },
 ];
