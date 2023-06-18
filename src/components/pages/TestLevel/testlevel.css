@@ -1,0 +1,42 @@
+.testslevel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .testslevel h6 {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .testslevel ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  .testslevel li {
+    margin-bottom: 10px;
+  }
+  
+  .testslevel input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  .testslevel button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .testslevel button:hover {
+    background-color: #0056b3;
+  }
+  

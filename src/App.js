@@ -29,6 +29,16 @@ import Login from './components/pages/Authorization/AuthForm';
 import FirstTest from './components/pages/Tests/FirstTest';
 import UserPage from './components/pages/userProfile/UserPage';
 import ForgotPassword from './components/pages/Authorization/ForgotPassword';
+import TestA1 from './components/pages/TestLevel/TestA1';
+import TestA2 from './components/pages/TestLevel/TestA2';
+import TestB1 from './components/pages/TestLevel/TestB1';
+import TestB2 from './components/pages/TestLevel/TestB2';
+import TestC1 from './components/pages/TestLevel/TestC1';
+import NoteApp from './components/pages/userProfile/Notes/NoteApp';
+import AvailableTests from './components/pages/userProfile/AvailableTests/AvailableTests';
+import Calendar from './components/pages/userProfile/Calendar/Calendar';
+import Meet from './components/pages/userProfile/Meet/Meet';
+
 
 function App() {
   return (
@@ -44,7 +54,19 @@ function App() {
         <Route path='/sign-up' component={Register} />
         <Route path='/examination' component={Examination} />
         <Route path='/profession' component={ProfessionalCourse} />
-      
+
+        <Route path='/testA1' component={TestA1} />
+        <Route path='/testA2' component={TestA2} />
+        <Route path='/testB1' component={TestB1} />
+        <Route path='/testB2' component={TestB2} />
+        <Route path='/testC1' component={TestC1} />
+
+        <Route path='/note' component={NoteApp} />
+        <Route path='/availableTests' component={AvailableTests} />
+        <Route path='/calendar' component={Calendar} />
+        <Route path='/meet' component={Meet} />
+
+
         <Route path='/userPage' component={UserPage} />
 
 

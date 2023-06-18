@@ -14,9 +14,9 @@ function BasicCard({ item }) {
     >
       <Card.Img variant="top" src={item?.image} />
       <Card.Body>
-        <Card.Title>Card {item.id}</Card.Title>
+        <Card.Title>Level {item.id}</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the...
+          Some quick example text to build on...
         </Card.Text>
       </Card.Body>
     </Card>

@@ -191,3 +191,9 @@
   .closeButton {
     margin-top: 10px;
   }
+
+  .meet-container {
+    width: 800px;
+    height: 600px;
+    margin-top: 20px;
+  }

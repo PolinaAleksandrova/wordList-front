@@ -5,42 +5,28 @@ import '../userProfile/UserPage.css'
 
 const Sidebar = () => {
     return (
+        
         <div class="sidebar">
             {/* <center>
                 <img src="1.png" class="profile_image" alt="">
             <h4>Jessica</h4>
             </center> */}
-            <Link to="/todolist">
+            <Link to="/note">
                 <i class="fas fa-list-ol"></i>
                 <span>Todo List</span>
             </Link>
-            <Link to="/count">
-                <i class="fas fa-plus"></i>
-                <span>Count</span>
-            </Link>
-            <Link to="/sessoes">
+            
+            <Link to="/availableTests">
                 <i class="fas fa-border-style"></i>
-                <span>Sessões</span>
+                <span>Sessions</span>
             </Link>
-            <a href="#">
+            <a href="/calendar">
                 <i class="fas fa-desktop"></i>
                 <span>Dashboard</span>
             </a>
-            <a href="#">
-                <i class="fas fa-cogs"></i>
-                <span>Components</span>
-            </a>
-            <a href="#">
-                <i class="fas fa-table"></i>
-                <span>Tables</span>
-            </a>
-            <a href="#">
+            <a href="/meet">
                 <i class="fas fa-th"></i>
-                <span>Forms</span>
-            </a>
-            <a href="#">
-                <i class="fas fa-sliders-h"></i>
-                <span>Settings</span>
+                <span>Meeting</span>
             </a>
         </div>
 

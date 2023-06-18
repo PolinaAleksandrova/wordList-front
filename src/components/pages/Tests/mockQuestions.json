@@ -50,5 +50,58 @@
       }
     ],
     "solutions": ["Ilikecats"]
+  },
+  {
+    "sentence": [
+      {
+        "id": "1",
+        "text": "Він",
+        "translations": ["He"]
+      },
+      {
+        "id": "2",
+        "text": "прийшов",
+        "translations": ["came"]
+      },
+      {
+        "id": "3",
+        "text": "вчасно",
+        "translations": ["in time"]
+      }
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "text": "I",
+        "sound": "I.mp3"
+      },
+      {
+        "id": "2",
+        "text": "He",
+        "sound": "cats.mp3"
+      },
+      {
+        "id": "3",
+        "text": "go",
+        "sound": "like.mp3"
+      },
+      {
+        "id": "4",
+        "text": "came",
+        "sound": "cats.mp3"
+      },
+      {
+        "id": "5",
+        "text": "in time",
+        "sound": "cats.mp3"
+      },
+      {
+        "id": "6",
+        "text": "on time",
+        "sound": "cats.mp3"
+      }
+    ],
+    "solutions": ["Hecamein time"]
   }
+
 ]
