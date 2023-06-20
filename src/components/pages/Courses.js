@@ -116,16 +116,16 @@ const products = [
   },
   {
     id: 3,
-    image: "https://www.woodwardenglish.com/wp-content/uploads/2020/04/english-phrasal-verbs-course.jpg",
+    image: "http://cotkandy.dtet.gov.lk/img/course/engcom.jpg",
   },
   {
     id: 4,
-    image: "https://www.woodwardenglish.com/wp-content/uploads/2022/09/english-reading-course-read-in-english.jpg",
+    image: "https://www.kingseducation.com/assets/images/assets/kings-life/2023-06/SEO_ENG_BusinessEnglishCourses.jpg",
   },
 
   {
     id: 5,
-    image: "https://www.woodwardenglish.com/wp-content/uploads/2020/04/english-phrasal-verbs-course.jpg",
+    image: "https://i.vimeocdn.com/video/1206403343-e49a33c8f2a496879311ad6e740ee797a5b21e7be4f3a3efc277d72551f58d51-d_640",
   },
   {
     id: 6,
