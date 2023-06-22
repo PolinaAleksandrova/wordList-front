@@ -1,8 +1,9 @@
 import React from 'react';
 import '../../mainCourses/style.css';
+import { useTranslation } from 'react-i18next';
 
 function Home() {
-  
+  const { t } = useTranslation();
   return (
     <div className="MainCourses">
     <div className="welcome">
@@ -12,22 +13,22 @@ function Home() {
     <div className="cardGrid">
         <div className="cardMain">
           <div className="cardMain-content">
-            <h2 className="cardMain-title">Тест 1</h2>
-            <p className="cardMain-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugait rem facilis.</p>
+            <h2 className="cardMain-title">{t('test1.title')}</h2>
+            <p className="cardMain-body">{t('test1.description')}</p>
             <a href="/quizPage" className="button">Learn More</a>
           </div>
         </div>
         <div className="cardMain">
           <div className="cardMain-content">
-            <h2 className="cardMain-title">Тест 2</h2>
-            <p className="cardMain-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugait rem facilis.</p>
+            <h2 className="cardMain-title">{t('test2.title')}</h2>
+            <p className="cardMain-body">{t('test2.description')}</p>
             <a href="/flashCards" className="button">Learn More</a>
           </div>
         </div>
         <div className="cardMain">
           <div className="cardMain-content">
-            <h2 className="cardMain-title">Тест 3</h2>
-            <p className="cardMain-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugait rem facilis.</p>
+            <h2 className="cardMain-title">{t('test3.title')}</h2>
+            <p className="cardMain-body">{t('test3.description')}</p>
             <a href="/test1" className="button">Learn More</a>
           </div>
         </div>

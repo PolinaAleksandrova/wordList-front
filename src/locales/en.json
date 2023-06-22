@@ -74,7 +74,15 @@
   
       "header": {
         "title": "Notes"
-      }
- 
+      },
+
+     
+      "test1.title": "Test 1",
+      "test1.description": "Test with multiple-choice questions within a time limit",
+      "test2.title": "Test 2",
+      "test2.description": "Flashcard mnemonic technique",
+      "test3.title": "Test 3",
+      "test3.description": "Building sentences from word blocks",
+      "learnMore": "Learn More"
     
   }

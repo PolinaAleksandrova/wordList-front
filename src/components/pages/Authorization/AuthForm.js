@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 function AuthForm() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { t } = useTranslation();
   const [formData, setFormData] = useState({
     email: '',
@@ -25,6 +26,7 @@ function AuthForm() {
       const response = await axios.post('http://localhost:8080/auth/authenticate', formData);
       document.cookie = `token=${response.data.token}`;
       window.location.href = '/';
+      setIsLoggedIn(true);
     } catch (error) {
       console.error(error);
     }

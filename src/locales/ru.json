@@ -76,8 +76,14 @@
    
         "header": {
           "title": "Замітки"
-        }
-   
+        },
+        "test1.title": "Тест 1",
+        "test1.description": "Тест із варіантами відповідей за відведений час",
+        "test2.title": "Тест 2",
+        "test2.description": "Мнемотехніка флеш-карток",
+        "test3.title": "Тест 3",
+        "test3.description": "Побудова речень із блоків слів",
+        "learnMore": "Детальніше"
       
   
 }
