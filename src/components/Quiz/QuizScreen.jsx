@@ -6,6 +6,7 @@ import QuizResult from "../Quiz/QuizResult";
 import "../../index.css"
 
 function QuizScreen({ retry }) {
+    const [currencyEarned, setCurrencyEarned] = useState(0);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [markedAnswers, setMarkedAnswers] = useState(new Array(QuestionList.length));
     const isQuestionEnd = currentQuestionIndex === QuestionList.length;

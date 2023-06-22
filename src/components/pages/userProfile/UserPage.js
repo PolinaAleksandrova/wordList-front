@@ -7,7 +7,8 @@ import  {useState, useEffect} from 'react';
 const Sidebar = () => {
 
     const [data, setData] = useState([]);
-
+    
+    
     const loadData = async() => {
       const token = "Bearer " + document.cookie.split('; ').find(cookie => cookie.startsWith('token=')).split('=')[1]; 
       console.log(token)
@@ -26,27 +27,11 @@ const Sidebar = () => {
       loadData();
     }, []);
   
-    const deleteWord = (id) => {
-      if(window.confirm("Are you sure that you want to delete this word ?")){
-        const token = "Bearer " + document.cookie.split('; ').find(cookie => cookie.startsWith('token=')).split('=')[1];  
-          axios.delete(`http://localhost:8080/words/${id}`,{
-            headers: {
-              'Authorization':token
-            },
-            responseType: "json",
-          });
-    
-          setTimeout(() => loadData(), 500);
-      }
-    }
 
     return (
-        
+        <div>
         <div class="sidebar">
-            {/* <center>
-                <img src="1.png" class="profile_image" alt="">
-            <h4>Jessica</h4>
-            </center> */}
+            
             <Link to="/note">
                 <i class="fas fa-list-ol"></i>
                 <span>Todo List</span>
@@ -65,7 +50,15 @@ const Sidebar = () => {
                 <span>Meeting</span>
             </a>
         </div>
-
+        <center>
+        <fieldset className="userInfo">
+          {data.firstName && <p>Hello, {data.firstName}</p>}
+          {data.lastName && <p>{data.lastName}</p>}
+          {data.email && <p>Email {data.email}</p>}
+          {data.bricks && <p>bricks: {data.bricks}</p>}
+        </fieldset>
+      </center>
+</div>
         
     )
 }

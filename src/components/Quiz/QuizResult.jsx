@@ -5,6 +5,7 @@ function QuizResult({ result, retry }) {
         <div className="result-screen">
             <h2>Result : {result.percentage}%</h2>
             <p>Selected {result.correct} correct options out of {result.total} questions.</p>
+            <p>+{result.correct} bricks added.</p>
             <button onClick={retry}>Retry</button>
         </div>
     );
