@@ -1,16 +1,37 @@
 import React from 'react'
-
+import axios from "axios";
 import { Link } from 'react-router-dom'
 import '../userProfile/UserPage.css'
+import  {useState, useEffect} from 'react';
 
 const Sidebar = () => {
+
+    const [data, setData] = useState([]);
+    
+    
+    const loadData = async() => {
+      const token = "Bearer " + document.cookie.split('; ').find(cookie => cookie.startsWith('token=')).split('=')[1]; 
+      console.log(token)
+      const response = await axios.get("http://localhost:8080/users/byToken",{
+        headers: {
+          'Authorization': token,
+          'Content-Type': 'application/json'
+        },
+        responseType: "json",
+      })
+      setData(response.data);
+      console.log(response.data)
+    };
+  
+    useEffect(() =>{
+      loadData();
+    }, []);
+  
+
     return (
-        
+        <div>
         <div class="sidebar">
-            {/* <center>
-                <img src="1.png" class="profile_image" alt="">
-            <h4>Jessica</h4>
-            </center> */}
+            
             <Link to="/note">
                 <i class="fas fa-list-ol"></i>
                 <span>Todo List</span>
@@ -29,25 +50,16 @@ const Sidebar = () => {
                 <span>Meeting</span>
             </a>
         </div>
-
-        // <nav className="sidebar">
-        //     {/* <div className="sidebar-header">TODO ALL FEATURES</div> */}
-        //     <li>
-        //         <Link to="/todolist" className="sidebar-link">
-        //             <div>TodoList</div>
-        //         </Link>
-        //     </li>
-        //     <li>
-        //         <Link to="/count" className="sidebar-link">
-        //             <div>Count</div>
-        //         </Link>
-        //     </li>
-        //     <li>
-        //         <Link to="/" className="sidebar-link">
-        //             <div>Sessões</div>
-        //         </Link>
-        //     </li>
-        // </nav>
+        <center>
+        <fieldset className="userInfo">
+          {data.firstName && <p>Hello, {data.firstName}</p>}
+          {data.lastName && <p>{data.lastName}</p>}
+          {data.email && <p>Email {data.email}</p>}
+          {data.bricks && <p>bricks: {data.bricks}</p>}
+        </fieldset>
+      </center>
+</div>
+        
     )
 }
 

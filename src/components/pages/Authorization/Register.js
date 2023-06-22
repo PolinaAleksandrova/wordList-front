@@ -4,7 +4,10 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import "./AuthForm.css";
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 function RegisterForm() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     firstname: '',
     lastname: '',
@@ -33,19 +36,19 @@ function RegisterForm() {
     <section>
     <div className="register">
             <div className="col-1">
-                <h2>Sign Up</h2>
-                <span>register and enjoy the service</span>
+            <h2>{t('registerForm.title')}</h2>
+            <span>{t('registerForm.subtitle')}</span>
     <form id='form' className='flex flex-col' onSubmit={handleSubmit}>
-    <input type="text" {...register("firstname")} value={formData.firstname} onChange={handleChange} placeholder='firstname' />
-    <input type="text" {...register("lastname")} value={formData.lastname} onChange={handleChange} placeholder='lastname' />
-      <input type="email" {...register("email")} value={formData.email} onChange={handleChange} placeholder='email' />
-                    <input type="password" {...register("password")} value={formData.password} onChange={handleChange} placeholder='password' />
+    <input type="text" {...register("firstname")} value={formData.firstname} onChange={handleChange} placeholder={t('registerForm.firstname')} />
+    <input type="text" {...register("lastname")} value={formData.lastname} onChange={handleChange} placeholder={t('registerForm.lastname')} />
+      <input type="email" {...register("email")} value={formData.email} onChange={handleChange} placeholder={t('registerForm.email')} />
+                    <input type="password" {...register("password")} value={formData.password} onChange={handleChange} placeholder={t('registerForm.password')} />
                    
                     {errors.email?.type === "required" && "Mobile Number is required"}
                     {errors.password?.type === "maxLength" && "Max Length Exceed"}
-                    <button type="submit">Register</button>
+                    <button type="submit">{t('registerForm.register')}</button>
                     <Link to='login'>
-                    <span className="navForms2">Already have an account? Login here.</span></Link>
+                    <span className="navForms2">{t('registerForm.haveAccount')}</span></Link>
     </form>
     </div>
     </div>

@@ -4,9 +4,12 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import "./AuthForm.css"
 import { Redirect } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 function AuthForm() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -23,6 +26,7 @@ function AuthForm() {
       const response = await axios.post('http://localhost:8080/auth/authenticate', formData);
       document.cookie = `token=${response.data.token}`;
       window.location.href = '/';
+      setIsLoggedIn(true);
     } catch (error) {
       console.error(error);
     }
@@ -33,17 +37,17 @@ function AuthForm() {
     <section>
     <div className="register">
             <div className="col-1">
-                <h2>Sign In</h2>
-                <span>sign in and enjoy the service</span>
+            <h2>{t('authForm.title')}</h2>
+            <span>{t('authForm.subtitle')}</span>
     <form id='form' className='flex flex-col' onSubmit={handleSubmit}>
-      <input type="email" {...register("email")} value={formData.email} onChange={handleChange} placeholder='email' />
-                    <input type="password" {...register("password")} value={formData.password} onChange={handleChange} placeholder='password' />
+      <input type="email" {...register("email")} value={formData.email} onChange={handleChange} placeholder={t('authForm.email')} />
+                    <input type="password" {...register("password")} value={formData.password} onChange={handleChange} placeholder={t('authForm.password')} />
                    
-                    {errors.email?.type === "required" && "Email is required"}
-                    {errors.password?.type === "maxLength" && "Max Length Exceed"}
-                    <button type="submit">Sign In</button>
+                    {errors.email?.type === "required" && t('authForm.emailRequired')}
+                    {errors.password?.type === "maxLength" && t('authForm.passwordMaxLength')}
+                    <button type="submit">{t('authForm.signIn')}</button>
                     <Link to='sign-up'>
-                    <span className="navForms">Don't have an account? Registr here.</span></Link>
+                    <span className="navForms">{t('authForm.noAccount')}</span></Link>
     
     </form>
     </div>

@@ -1,0 +1,88 @@
+{
+    "sidebar.todoList": "Todo List",
+    "sidebar.sessions": "Sessions",
+    "sidebar.dashboard": "Dashboard",
+    "navbar": {
+      "home": "Home",
+      "courses": "Courses",
+      "tests": "Tests",
+      "contactUs": "Contact Us",
+      "signUp": "Sign Up"
+    },
+    "welcome.title": "Welcome!",
+  "welcome.description": "Choose available courses to learn English vocabulary",
+
+    "basicCard.description1": "Evaluate your basic language skills and ability to use everyday expressions",
+    "basicCard.description2": "Measure your ability to communicate in simple and routine tasks, such as exchanging basic information",
+    "basicCard.description3": "Take a test to assess your intermediate language skills and proficiency",
+    "basicCard.description4": "Knowledge of professional vocabulary",
+    "basicCard.description5": "Take a comprehensive test to measure your advanced language proficiency",
+    "basicCard.description6": "Challenge yourself with a test designed for highly proficient speakers",
+
+    "registerForm.title": "Sign Up",
+  "registerForm.subtitle": "Register and enjoy the service",
+  "registerForm.firstname": "First Name",
+  "registerForm.lastname": "Last Name",
+  "registerForm.email": "Email",
+  "registerForm.password": "Password",
+  "registerForm.register": "Register",
+  "registerForm.haveAccount": "Already have an account? Login here.",
+
+  "authForm.title": "Sign In",
+  "authForm.subtitle": "Sign in and enjoy the service",
+  "authForm.email": "Email",
+  "authForm.password": "Password",
+  "authForm.signIn": "Sign In",
+  "authForm.noAccount": "Don't have an account? Register here.",
+
+  "contact.title": "Contact Information",
+  "contact.description": "Get in touch with us",
+  "contact.email": "Email: example@example.com",
+  "contact.phone": "Phone: +1 234 567 890",
+  "contact.address": "Address: 23 Pobedonosnaya St, Kharkiv",
+  "contact.footer": "© 2023 All rights reserved",
+ 
+  "course.buildingBlocks.title": "Building Blocks",
+  "course.buildingBlocks.description": "An intensive course designed for beginners to master the basics of the English language and develop skills",
+  "course.communication.title": "Effective Communication",
+  "course.communication.description": "A course designed for professionals to effectively use the English language in a business environment",
+  "course.ielts.title": "\"IELTS\" Exam Preparation",
+  "course.ielts.description": "A preparatory course that helps students acquire the necessary skills for successful IELTS examination",
+  "course.travelers.title": "English for Travelers",
+  "course.travelers.description": "A practical course that helps students learn useful phrases, vocabulary, and skills for traveling in English",
+  "course.conversation.title": "Advanced Conversation",
+  "course.conversation.description": "An advanced course for students who already have an intermediate level of English and aims to develop their conversational skills",
+  "course.writing.title": "Academic Writing",
+  "course.writing.description": "A course that develops academic writing skills required for successful work in an educational environment, including essay writing, papers, and research articles",
+  "course.speech.title": "Clear Speech",
+  "course.speech.description": "An intensive course in pronunciation correction that helps students master English sounds, intonation, and rhythm",
+  "course.literature.title": "Exploring Contemporary",
+  "course.literature.description": "A course that offers an immersive experience in English literature, including reading and analyzing classic works",
+  "footer": "© 2023 All rights reserved",
+
+  "courses": {
+    "title": "Courses",
+    "prevButton": "Prev",
+    "nextButton": "Next"
+  },
+ 
+    "tests": {
+      "title": "Tests",
+      "prevButton": "Prev",
+      "nextButton": "Next"
+    },
+  
+      "header": {
+        "title": "Notes"
+      },
+
+     
+      "test1.title": "Test 1",
+      "test1.description": "Test with multiple-choice questions within a time limit",
+      "test2.title": "Test 2",
+      "test2.description": "Flashcard mnemonic technique",
+      "test3.title": "Test 3",
+      "test3.description": "Building sentences from word blocks",
+      "learnMore": "Learn More"
+    
+  }

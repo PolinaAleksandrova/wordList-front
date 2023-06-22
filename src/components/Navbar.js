@@ -3,9 +3,10 @@ import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import Dropdown from './Dropdown';
+import { useTranslation } from 'react-i18next';
 
 function Navbar() {
-
+  const { t, i18n } = useTranslation();
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
 
@@ -27,7 +28,9 @@ function Navbar() {
       setDropdown(false);
     }
   };
-
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
   return (
     <>
       <nav className='navbar'>
@@ -41,7 +44,7 @@ function Navbar() {
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-              Home
+            {t('navbar.home')}
             </Link>
           </li>
           <li
@@ -54,7 +57,8 @@ function Navbar() {
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              Courses <i className='fas fa-caret-down' />
+              {t('navbar.courses')}
+             <i className='fas fa-caret-down' />
             </Link>
             {dropdown && <Dropdown />}
           </li>
@@ -64,7 +68,7 @@ function Navbar() {
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              Tests
+              {t('navbar.tests')}
             </Link>
           </li>
           <li className='nav-item'>
@@ -73,7 +77,7 @@ function Navbar() {
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              Contact Us
+              {t('navbar.contactUs')}
             </Link>
           </li>
           <li>
@@ -82,7 +86,7 @@ function Navbar() {
               className='nav-links-mobile'
               onClick={closeMobileMenu}
             >
-              Sign Up
+             {t('navbar.signUp')}
             </Link>
           </li>
           <li>
@@ -93,6 +97,10 @@ function Navbar() {
           </li>
         </ul>
         <Button />
+        <div className='language-buttons'>
+          <button onClick={() => changeLanguage('en')}>EN</button>
+          <button onClick={() => changeLanguage('ru')}>UKR</button>
+        </div>
       </nav>
     </>
   );
