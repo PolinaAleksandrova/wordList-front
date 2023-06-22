@@ -38,11 +38,13 @@ import NoteApp from './components/pages/userProfile/Notes/NoteApp';
 import AvailableTests from './components/pages/userProfile/AvailableTests/AvailableTests';
 import Calendar from './components/pages/userProfile/Calendar/Calendar';
 import Meet from './components/pages/userProfile/Meet/Meet';
-
+import { I18nextProvider } from 'react-i18next';
+import i18n from '../src/i18n'; // импортируйте вашу конфигурацию i18n
 
 function App() {
   return (
     <Router>
+      <I18nextProvider i18n={i18n}>
       <Navbar />
 
       <Switch>
@@ -100,7 +102,7 @@ function App() {
         <AdminPage />
  
       </Switch>
-      
+      </I18nextProvider>
     </Router>
   );
 }

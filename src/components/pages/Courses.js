@@ -4,6 +4,7 @@ import "../Courses-section/courses.css";
 import BasicCard from "../Card";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useTranslation } from 'react-i18next';
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -32,6 +33,7 @@ function SamplePrevArrow(props) {
 }
 
 export default function Courses() {
+  const { t } = useTranslation();
   const slider = React.useRef(null);
 
   const settings = {
@@ -83,16 +85,16 @@ export default function Courses() {
   return (
     <div>
       <h1 style={{ textAlign: "center", margin: "62px 0px" }}>
-        Courses
+      {t('courses.title')}
       </h1>
 
       <div style={{ margin: 20 }}>
-        <button onClick={() => slider?.current?.slickPrev()}>Prev</button>
+        <button onClick={() => slider?.current?.slickPrev()}>{t('courses.prevButton')}</button>
         <button
           style={{ marginLeft: 20 }}
           onClick={() => slider?.current?.slickNext()}
         >
-          Next
+          {t('courses.nextButton')}
         </button>
       </div>
 

@@ -1,25 +1,26 @@
 import React from 'react';
 import '../../App.css';
 import '../pages/mainCourses/style.css'
-
+import { useTranslation } from 'react-i18next';
 
 function Contact() {
+  const { t } = useTranslation();
   return (
     <div className="MainCourses">
       <div className="welcome">
-        <h1 className="welcome-title">Контактна інформація</h1>
-        <p className="welcome-description">Ознайомтеся з контактною інформацією, щоб зв'язатися з нами</p>
+        <h1 className="welcome-title">{t('contact.title')}</h1>
+        <p className="welcome-description">{t('contact.description')}</p>
       </div>
       <div className="cardGrid">
         {/* Карточки */}
       </div>
 
       <div className="contact">
-        <h2 className="contact-title">Контактна інформація</h2>
+        <h2 className="contact-title">{t('contact.title')}</h2>
         <div className="contact-info">
-          <p>Email: example@example.com</p>
-          <p>Телефон: +1 234 567 890</p>
-          <p>Адреса: м. Назва міста, вул. Назва вулиці, будинок 123</p>
+        <p>{t('contact.email')}</p>
+          <p>{t('contact.phone')}</p>
+          <p>{t('contact.address')}</p>
         </div>
         <div className="contact-map">
           <iframe
@@ -35,7 +36,7 @@ function Contact() {
       </div>
 
       <div className="footer">
-        © 2023 Всі права захищені
+      {t('contact.footer')}
       </div>
     </div>
   );
